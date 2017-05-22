@@ -119,5 +119,4 @@ def view_code(request,stream_id,subject_id):
         return render(request, 'practicals/code.html', {
 
         })
-
     return HttpResponse(assignments)
