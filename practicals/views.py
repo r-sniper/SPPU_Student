@@ -1,6 +1,7 @@
 from .models import Stream_Data, Subject_Data
 from django.shortcuts import render
 from django.http import HttpResponse
+import os
 
 
 def home(request):
@@ -36,45 +37,6 @@ def default_subject(request):
     else:
 
         return HttpResponse("Some Error Occured. ")
-        '''
-        stream_id = stream_id_passed
-        subject_rows = Subject_Data.objects.filter(stream_id=stream_id)
-        subjects = subject_rows.values_list('subject', flat=True).distinct()
-        # print(subjects[0])
-        index = 0
-        for i in subjects:
-            #print(str(i))
-            if request.POST.get(i):
-                break
-            index += 1
-        if index < subjects.count():
-            assignment_title = subject_rows.filter(subject=subjects[index]).values_list('assignment_title', flat=True)
-            problem_statement = subject_rows.filter(subject=subjects[index]).values_list('problem_statement', flat=True)
-            list_of_assign = zip(assignment_title, problem_statement)
-            # print(assignments)
-            #print(stream_id)
-            #print("test")
-            # return HttpResponse(stream_id)
-            return render(request, 'practicals/subject.html', {
-                'subjects': subjects, 'list_of_assign': list_of_assign, 'selected_subject_id': index+1,
-                'stream_id': int(stream_id)
-            })
-        else:
-            assignments = subject_rows.filter(subject=subjects[int(selected_subject_passed)-1])
-            count = 1
-            for i in assignments:
-                if request.POST.get(str(count)):
-                    break
-                count += 1
-            print(str(count))
-            if count < assignments.count():
-                return render(request, 'practicals/code.html',{
-
-                })
-
-            return HttpResponse(assignments)
-
-        '''
 
 
 def change_subject(request, stream_id):
@@ -104,19 +66,65 @@ def change_subject(request, stream_id):
         return HttpResponse("Subject not found")
 
 
-def view_code(request,stream_id,subject_id):
+def view_code(request, stream_id, subject_id):
     subject_rows = Subject_Data.objects.filter(stream_id=stream_id)
     subjects = subject_rows.values_list('subject', flat=True).distinct()
     assignments = subject_rows.filter(subject=subjects[int(subject_id) - 1])
-    count = 0 #Used forloop.counter0 so startting from 0
+    count = 0  # Used forloop.counter0 so startting from 0
     for i in assignments:
         if request.POST.get(str(count)):
             break
         count += 1
     print(str(count))
+    # fp = open('codes/Computer Engineering-FE/FPL-1/1.helloworld.c')
 
     if count < assignments.count():
         return render(request, 'practicals/code.html', {
-
+            'assignment': assignments[count]
         })
     return HttpResponse(assignments)
+
+
+#This added all the new codes to the database
+def refresh(request):
+    osdir = os.walk('codes/')
+
+    everything = set((), )
+    for root, dirs, files in osdir:
+        if root.count('/') == 3 and files:
+            # print(root)
+            # print(files)
+            line = root.split('/')
+            for f in files:
+                temp = (line[1], line[2], line[3], f)
+                everything.add(temp)
+
+                # print('Stream:' + line[2])
+
+    for s in everything:
+        stream = s[0]
+        year = s[1]
+        subject = s[2]
+        filename = s[3]
+        title = filename.split('.')[1]
+        directory = 'codes' + '/' + stream + '/' + year + '/' + subject + '/' + filename
+        fp = open(directory, 'r')
+        problem = fp.read().split("/*")[1].split("*/")[0]
+        fp.close()
+        print(problem)
+        if Stream_Data.objects.filter(stream=stream, year=year):
+            print("Exists")
+        else:
+            newStream = Stream_Data(stream=stream, year=year)
+            newStream.save()
+            print("Dosent")
+        if Subject_Data.objects.filter(stream_id=Stream_Data.objects.filter(stream=stream, year=year)[0],
+                                       subject=subject, assignment_title=title, problem_statement=problem,
+                                       filename=filename):
+            print("Exists")
+        else:
+            newSubject = Subject_Data(stream_id=Stream_Data.objects.filter(stream=stream, year=year)[0],
+                                      subject=subject, assignment_title=title, problem_statement=problem,
+                                      filename=filename)
+            newSubject.save()
+    return HttpResponse("Done successfully")
