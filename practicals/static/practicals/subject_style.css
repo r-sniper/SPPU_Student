@@ -1,0 +1,106 @@
+html {
+    background: radial-gradient(#46acc2, #05668d);
+    min-height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.left, .right {
+
+    display: inline-block;
+    /*text-align: center;*/
+    height: 100vh;
+}
+
+.left {
+
+    background: radial-gradient(#46acc2, #05668d);;
+    opacity: 0.7;
+    float: left;
+    width: 22%;
+}
+
+.right {
+    float: left;
+    width: 78%;
+    background: #f0f0f0;
+}
+
+.leftButton {
+  display: inline-block;
+  background-color: transparent;
+  margin: 0 10px 0 0;
+  padding: 15px 30px;
+  width: 100%;
+  font-size: 20px;
+  font-family: "Bitter",serif;
+  line-height: 1.8;
+  box-shadow: none;
+    border: none;
+    border-bottom: 1px solid white;
+  border-radius: 0;
+}
+
+.leftButton:focus {
+  outline: none
+}
+p:hover {
+    background: #737373;
+
+}
+
+details {
+    padding: 10px;
+}
+
+summary {
+    outline: none;
+    padding: 10px;
+}
+
+details {
+    color: #000;
+    border-bottom: 2px solid #dddddd;
+    margin: 0px 10px;
+}
+
+details > summary {
+    font-size: larger;
+    color: #444;
+}
+
+details[open] > summary {
+    color: #333333;
+    font-weight: bold;
+}
+pre{
+    padding: 5px 5px 5px 50px;
+}
+
+details img {
+
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.rightButtons {
+    float: right;
+    background: #F0F0F0;
+    display: inline;
+    outline: none;
+    border: none;
+    position: relative;
+    top: -25px;
+}
+
+span {
+    position: relative;
+    top: -11px;
+    font-size: 15px;
+
+}

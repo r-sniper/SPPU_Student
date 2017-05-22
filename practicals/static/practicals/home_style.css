@@ -1,0 +1,88 @@
+/*
+Colors schemes:
+#42f2f7
+#46acc2
+#05668d
+#8ee3f5
+#2274a5
+ */
+*{
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+
+}
+html{
+	background: radial-gradient(#46acc2, #05668d);
+	min-height: 100%;
+	font-family: 'Ubuntu Mono', monospace;
+
+}
+body{
+	margin: 0;
+}
+#head{
+	margin-top: 2px;
+	margin-bottom: 10px; 
+}
+.title h1{
+	text-align: center;
+	background: rgba(0,0,0,.3);
+	font-size: 3em;
+	color:white;
+	font-family: 'Comfortaa', cursive;
+	margin-bottom: 10px;
+	margin-top: 0; 
+	padding-top:10px;
+	margin-bottom: 80px;  
+}
+.wrap{
+	margin: 0 auto;text-align: center;
+} 
+#container{
+	color:#1f1f1f;
+	padding: 20px 20px 5px 20px;
+	background: #f1f1f1;
+	margin: 0 auto;
+    border: 10px;
+	max-width: 300px;
+    box-shadow: 5px 5px 15px #05668d;
+}
+ select{
+	display:inline-block;
+	background: #DDDDDD;
+	outline: none;
+	border: none;
+	color: #707070;
+	margin-bottom: 2px;
+	padding: 10px;
+	font-size: .8em;
+	text-align: center;
+}
+hr{
+	border-top: 1px dashed #8c8b8b;
+	border-bottom: 1px dashed #fff;
+}
+#container select option{
+	background-color: #296A79;
+	color: white;	
+}
+button{
+background-color: #46acc2; /* Green */
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: none;
+
+}
+#year , #stream {
+	width: 100%;
+	margin-bottom:15px;
+}
+option[value="hide"]{
+   display: none;
+}
+#year {
+	 display: none;
+}

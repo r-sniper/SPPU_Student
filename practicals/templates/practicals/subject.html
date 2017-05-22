@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Second Page</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'practicals/subject_style.css' %}">
+</head>
+<body>
+<div class="wrap">
+    <form id='submit_subject' action="{% url 'selection:change_subject' stream_id %}" method="post">
+        {% csrf_token %}
+        <div class="left">
+            {% for subject in subjects %}
+                {% ifequal forloop.counter selected_subject_id %}
+                    <button style="background: #587680" id="subject{{ forloop.counter }}" name="{{ subject }}"
+                            value="1" class="leftButton">{{ subject }}</button>
+                {% else %}
+                    <button id="subject{{ forloop.counter }}" name="{{ subject }}" value="1"
+                            class="leftButton">{{ subject }}</button>
+                {% endifequal %}
+                <br>
+            {% endfor %}
+        </div>
+    </form>
+    <form id="select_assignment" action="{% url 'selection:view_code' stream_id selected_subject_id %}" method="post">
+        {% csrf_token %}
+        <div class="right">
+            {% for element in list_of_assign %}
+                <details>
+                    <summary>{{ element.0 }}
+                        <div class="btn">
+                            <button class="rightButtons"><img src="{% static 'practicals/download.svg' %}" width="30px"
+                                                              height="30px"></button>
+                            <button class="rightButtons" name="{{ forloop.counter0 }}" id="{{ forloop.counter0 }}"
+                                    value="{{ forloop.counter0 }}"><span>View Code </span><img
+                                    src="{% static 'practicals/code.svg' %}"></button>
+                        </div>
+                    </summary>
+
+                    <pre>{{ element.1 }}
+                </pre>
+                </details>
+            {% endfor %}
+        </div>
+    </form>
+</div>
+</body>
+</html>
