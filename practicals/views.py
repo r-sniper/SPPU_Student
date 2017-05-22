@@ -67,9 +67,13 @@ def change_subject(request, stream_id):
 
 
 def view_code(request, stream_id, subject_id):
+    stream_obj = Stream_Data.objects.get(pk=stream_id)
+    stream = stream_obj.stream
+    year = stream_obj.year
     subject_rows = Subject_Data.objects.filter(stream_id=stream_id)
     subjects = subject_rows.values_list('subject', flat=True).distinct()
     assignments = subject_rows.filter(subject=subjects[int(subject_id) - 1])
+    subject = subjects[int(subject_id) - 1]
     count = 0  # Used forloop.counter0 so startting from 0
     for i in assignments:
         if request.POST.get(str(count)):
@@ -79,8 +83,12 @@ def view_code(request, stream_id, subject_id):
     # fp = open('codes/Computer Engineering-FE/FPL-1/1.helloworld.c')
 
     if count < assignments.count():
+        filename = assignments[count].filename
+        directory = 'codes' + '/' + stream + '/' + year + '/' + subject + '/' + filename
+        fp = open(directory, 'r')
+        code = fp.read()
         return render(request, 'practicals/code.html', {
-            'assignment': assignments[count]
+            'assignment': assignments[count],'code':code,
         })
     return HttpResponse(assignments)
 
