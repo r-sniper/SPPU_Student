@@ -15,6 +15,7 @@ STRUCTURE
 
 '''
 
+
 class Stream_Data(models.Model):
     stream = models.CharField(max_length=100)
     year = models.CharField(max_length=5)
@@ -31,10 +32,4 @@ class Subject_Data(models.Model):
     filename = models.CharField(max_length=20)
 
     def __str__(self):
-        return (str(self.id) + " " + self.subject + " " +self.assignment_title)
-
-
-
-
-
-
+        return (str(self.id) + " " + self.subject + " " + self.assignment_title)

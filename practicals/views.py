@@ -1,16 +1,16 @@
 from wsgiref.util import FileWrapper
-
 from .models import Stream_Data, Subject_Data
 from django.shortcuts import render
 from django.http import HttpResponse
 import os
-from django.utils.encoding import smart_str
 
+
+# Homepage
 def home(request):
+    #.distinct()to only get single copies of all streams
     all_streams = Stream_Data.objects.values_list('stream', flat=True).distinct()
     return render(request, 'practicals/home.html', {
         'all_streams': all_streams,
-
     })
 
 
@@ -23,15 +23,12 @@ def default_subject(request):
         subject_rows = Subject_Data.objects.filter(stream_id=stream_id)
         stream_id = list(stream_id)
         subjects = subject_rows.values_list('subject', flat=True).distinct()
-        # print(subjects[0])
         assignment_title = subject_rows.filter(subject=subjects[0]).values_list('assignment_title', flat=True)
         problem_statement = subject_rows.filter(subject=subjects[0]).values_list('problem_statement', flat=True)
         list_of_assign = zip(assignment_title, problem_statement)
-        # print(assignments)
         print(stream_id)
         print("test")
         print(stream_id[0])
-        # return HttpResponse(stream_id)
         return render(request, 'practicals/subject.html', {
             'subjects': subjects, 'list_of_assign': list_of_assign, 'selected_subject_id': 1,
             'stream_id': int(stream_id[0])
@@ -76,7 +73,7 @@ def view_code(request, stream_id, subject_id):
     subjects = subject_rows.values_list('subject', flat=True).distinct()
     assignments = subject_rows.filter(subject=subjects[int(subject_id) - 1])
     subject = subjects[int(subject_id) - 1]
-    count = request.POST.get('code') #It returns value from name (value = requrst.POST.get(name)
+    count = request.POST.get('code')  # It returns value from name (value = requrst.POST.get(name)
     # for i in assignments:
     #     if request.POST.get(str(count)):
     #         break
@@ -90,7 +87,7 @@ def view_code(request, stream_id, subject_id):
         fp = open(directory, 'r')
         code = fp.read()
         return render(request, 'practicals/code.html', {
-            'assignment': assignments[int(count)],'code':code,
+            'assignment': assignments[int(count)], 'code': code,
         })
     else:
         count = request.POST.get('download')
@@ -105,10 +102,10 @@ def view_code(request, stream_id, subject_id):
             return response
         else:
             return HttpResponse("Oops! Something went wrong.")
-    return HttpResponse(assignments)
 
 
-#This added all the new codes to the database
+# This adds all the new codes to the database
+# Warning do not use on hosted server- only on local server.
 def refresh(request):
     osdir = os.walk('codes/')
 
@@ -130,8 +127,13 @@ def refresh(request):
         subject = s[2]
         filename = s[3]
         title = filename.split('.')[1]
-        directory = 'codes' + '/' + stream + '/' + year + '/' + subject + '/' + filename
-        fp = open(directory, 'r')
+        #Important add root to deirctory when deploying
+        # root = '/home/rsniper/SPPU_Student/'
+        directory = 'codes/' + stream + '/' + year + '/' + subject + '/' + filename
+        try:
+            fp = open(directory, 'r')
+        except IOError:
+            return HttpResponse("File connot be opened")
         problem = fp.read().split("/*")[1].split("*/")[0]
         fp.close()
         print(problem)
