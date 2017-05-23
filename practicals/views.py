@@ -1,8 +1,10 @@
+from wsgiref.util import FileWrapper
+
 from .models import Stream_Data, Subject_Data
 from django.shortcuts import render
 from django.http import HttpResponse
 import os
-
+from django.utils.encoding import smart_str
 
 def home(request):
     all_streams = Stream_Data.objects.values_list('stream', flat=True).distinct()
@@ -14,9 +16,9 @@ def home(request):
 
 # When Go button is clicked from homepage
 def default_subject(request):
-    if request.POST.get("Go"):
-        stream = request.POST.get('stream')
-        year = request.POST.get('year')
+    if request.GET.get("Go"):
+        stream = request.GET.get('stream')
+        year = request.GET.get('year')
         stream_id = Stream_Data.objects.filter(stream=stream, year=year).values_list('id', flat=True)
         subject_rows = Subject_Data.objects.filter(stream_id=stream_id)
         stream_id = list(stream_id)
@@ -74,22 +76,35 @@ def view_code(request, stream_id, subject_id):
     subjects = subject_rows.values_list('subject', flat=True).distinct()
     assignments = subject_rows.filter(subject=subjects[int(subject_id) - 1])
     subject = subjects[int(subject_id) - 1]
-    count = 0  # Used forloop.counter0 so startting from 0
-    for i in assignments:
-        if request.POST.get(str(count)):
-            break
-        count += 1
-    print(str(count))
+    count = request.POST.get('code') #It returns value from name (value = requrst.POST.get(name)
+    # for i in assignments:
+    #     if request.POST.get(str(count)):
+    #         break
+    #     count += 1
+    # print(str(count))
     # fp = open('codes/Computer Engineering-FE/FPL-1/1.helloworld.c')
 
-    if count < assignments.count():
-        filename = assignments[count].filename
+    if count:
+        filename = assignments[int(count)].filename
         directory = 'codes' + '/' + stream + '/' + year + '/' + subject + '/' + filename
         fp = open(directory, 'r')
         code = fp.read()
         return render(request, 'practicals/code.html', {
-            'assignment': assignments[count],'code':code,
+            'assignment': assignments[int(count)],'code':code,
         })
+    else:
+        count = request.POST.get('download')
+        if count:
+            filename = assignments[int(count)].filename
+            directory = 'codes' + '/' + stream + '/' + year + '/' + subject + '/' + filename
+            fp = open(directory, 'r')
+            fileWrap = FileWrapper(fp)
+            response = HttpResponse(fileWrap, content_type='application/force-download')
+            response['Content-Disposition'] = 'attachment; filename=%s' % filename
+            response['Content-Length'] = os.path.getsize(directory)
+            return response
+        else:
+            return HttpResponse("Oops! Something went wrong.")
     return HttpResponse(assignments)
 
 

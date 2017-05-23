@@ -16,7 +16,7 @@
 		<section class="title">
 			<h1>Home</h1>
 		</section>
-        <form action="{% url 'selection:default_subject' %}" method="post">
+        <form action="{% url 'selection:default_subject' %}" method="get">
         {% csrf_token %}
 		<section class="wrap">
 			<div id="container">
@@ -34,7 +34,6 @@
 				</select><br/>
 				<button id="Go" value="Go" name="Go">Go</button>
 			</div>
-
 		</section>
         </form>
 	</main>

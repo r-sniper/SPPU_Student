@@ -29,9 +29,11 @@
                 <details>
                     <summary>{{ element.0 }}
                         <div class="btn">
-                            <button class="rightButtons"><img src="{% static 'practicals/download.svg' %}" width="30px"
-                                                              height="30px"></button>
-                            <button class="rightButtons" name="{{ forloop.counter0 }}" id="{{ forloop.counter0 }}"
+                            <button class="rightButtons" value="{{ forloop.counter0 }}" name="download"
+                                    id="download{{ forloop.counter0 }}"><img
+                                    src="{% static 'practicals/download.svg' %}" width="30px"
+                                    height="30px"></button>
+                            <button class="rightButtons" name="code" id="code{{ forloop.counter0 }}"
                                     value="{{ forloop.counter0 }}"><span>View Code </span><img
                                     src="{% static 'practicals/code.svg' %}"></button>
                         </div>
