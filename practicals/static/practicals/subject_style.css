@@ -1,24 +1,18 @@
-html {
-    background: radial-gradient(#46acc2, #05668d);
-    min-height: 100%;
-    box-sizing: border-box;
-}
-
+@import "main.css";
 body {
-    margin: 0;
+    margin: 0;font-family: "head", sans-serif;
 }
 
 .left, .right {
-
     display: inline-block;
-    /*text-align: center;*/
     height: 100vh;
 }
-
+button{
+    font-family: head;
+}
 .left {
 
-    background: radial-gradient(#46acc2, #05668d);;
-    opacity: 0.7;
+    background:  #05668d;
     float: left;
     width: 22%;
 }
@@ -27,6 +21,7 @@ body {
     float: left;
     width: 78%;
     background: #f0f0f0;
+    font-family: "ui", sans-serif;
 }
 
 .leftButton {
@@ -36,12 +31,11 @@ body {
   padding: 15px 30px;
   width: 100%;
   font-size: 20px;
-  font-family: "Bitter",serif;
+  font-family: "head",serif;
   line-height: 1.8;
   box-shadow: none;
-    border: none;
-    border-bottom: 1px solid white;
-  border-radius: 0;
+  border: none;
+    line-height: 22px;
 }
 
 .leftButton:focus {

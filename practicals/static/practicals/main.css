@@ -1,0 +1,20 @@
+/*
+Colors schemes:
+#42f2f7
+#46acc2
+#05668d
+#8ee3f5
+#2274a5
+ */
+@font-face {
+    font-family: head;
+    src: url(fonts/Roboto-Medium.ttf);
+}
+@font-face {
+    font-family: ui;
+    src: url(fonts/Roboto-Regular.ttf);
+}
+html{
+	background: #05668d;
+	min-height: 100%;
+}
