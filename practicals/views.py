@@ -3,7 +3,7 @@ from .models import Stream_Data, Subject_Data
 from django.shortcuts import render
 from django.http import HttpResponse
 import os
-
+import getpass
 
 # Homepage
 def home(request):
@@ -40,6 +40,7 @@ def change_subject(request, stream_id):
     subjects = subject_rows.values_list('subject', flat=True).distinct()
     # print(subjects[0])
     index = int(request.GET.get('subject'))
+    print(getpass.getuser())
     if index:
         index -= 1
         assignment_title = subject_rows.filter(subject=subjects[index]).values_list('assignment_title', flat=True)
@@ -74,9 +75,13 @@ def view_code(request, stream_id, subject_id):
     # print(str(count))
     # fp = open('codes/Computer Engineering-FE/FPL-1/1.helloworld.c')
 
+    base_directory = ''
+    if getpass.getuser() == 'rsniper':
+        base_directory = '/home/rsniper/SPPU_Student/'
     if count:
+
         filename = assignments[int(count)].filename
-        directory = 'codes' + '/' + stream + '/' + year + '/' + subject + '/' + filename
+        directory = base_directory + 'codes/' + stream + '/' + year + '/' + subject + '/' + filename
         fp = open(directory, 'r')
         code = fp.read()
         return render(request, 'practicals/code.html', {
@@ -86,7 +91,7 @@ def view_code(request, stream_id, subject_id):
         count = request.GET.get('download')
         if count:
             filename = assignments[int(count)].filename
-            directory = 'codes' + '/' + stream + '/' + year + '/' + subject + '/' + filename
+            directory = base_directory + 'codes/' + stream + '/' + year + '/' + subject + '/' + filename
             fp = open(directory, 'r')
             fileWrap = FileWrapper(fp)
             response = HttpResponse(fileWrap, content_type='application/force-download')
@@ -100,6 +105,8 @@ def view_code(request, stream_id, subject_id):
 # This adds all the new codes to the database
 # Warning do not use on hosted server- only on local server.
 def refresh(request):
+    if getpass.getuser() == 'rsniper':
+        return HttpResponse("Please don't use this URL just yet")
     osdir = os.walk('codes/')
 
     everything = set((), )
