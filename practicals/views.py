@@ -26,9 +26,6 @@ def default_subject(request):
         assignment_title = subject_rows.filter(subject=subjects[0]).values_list('assignment_title', flat=True)
         problem_statement = subject_rows.filter(subject=subjects[0]).values_list('problem_statement', flat=True)
         list_of_assign = zip(assignment_title, problem_statement)
-        print(stream_id)
-        print("test")
-        print(stream_id[0])
         return render(request, 'practicals/subject.html', {
             'subjects': subjects, 'list_of_assign': list_of_assign, 'selected_subject_id': 1,
             'stream_id': int(stream_id[0])
@@ -42,14 +39,9 @@ def change_subject(request, stream_id):
     subject_rows = Subject_Data.objects.filter(stream_id=stream_id)
     subjects = subject_rows.values_list('subject', flat=True).distinct()
     # print(subjects[0])
-    index = 0
-    for i in subjects:
-        # print(str(i))
-        if request.POST.get(i):
-            break
-        index += 1
-    print(index)
-    if index < subjects.count():
+    index = int(request.GET.get('subject'))
+    if index:
+        index -= 1
         assignment_title = subject_rows.filter(subject=subjects[index]).values_list('assignment_title', flat=True)
         problem_statement = subject_rows.filter(subject=subjects[index]).values_list('problem_statement', flat=True)
         list_of_assign = zip(assignment_title, problem_statement)
@@ -73,9 +65,10 @@ def view_code(request, stream_id, subject_id):
     subjects = subject_rows.values_list('subject', flat=True).distinct()
     assignments = subject_rows.filter(subject=subjects[int(subject_id) - 1])
     subject = subjects[int(subject_id) - 1]
-    count = request.POST.get('code')  # It returns value from name (value = requrst.POST.get(name)
+    count = request.GET.get('code')  # It returns value from name (value = requrst.GET.get(name)
+    print(count)
     # for i in assignments:
-    #     if request.POST.get(str(count)):
+    #     if request.GET.get(str(count)):
     #         break
     #     count += 1
     # print(str(count))
@@ -90,7 +83,7 @@ def view_code(request, stream_id, subject_id):
             'assignment': assignments[int(count)], 'code': code,
         })
     else:
-        count = request.POST.get('download')
+        count = request.GET.get('download')
         if count:
             filename = assignments[int(count)].filename
             directory = 'codes' + '/' + stream + '/' + year + '/' + subject + '/' + filename
@@ -136,7 +129,6 @@ def refresh(request):
             return HttpResponse("File connot be opened")
         problem = fp.read().split("/*")[1].split("*/")[0]
         fp.close()
-        print(problem)
         if Stream_Data.objects.filter(stream=stream, year=year):
             print("Exists")
         else:
