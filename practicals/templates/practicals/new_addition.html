@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% ifequal subject_count 0 %}
+    No subjects were added
+    <br>
+{% else %}
+    Following subjects were added:<br>
+    {% for subject in subjects %}
+
+        {{ subject }}
+        <br>
+    {% endfor %}
+{% endifequal %}
+
+{% ifequal program_count 0 %}
+    No Programs were added
+    <br>
+{% else %}
+    Following Programs were added:<br>
+    {% for program in programs %}
+        {{ program }}
+        <br>
+    {% endfor %}
+{% endifequal %}
+</body>
+</html>

@@ -2,12 +2,13 @@ from wsgiref.util import FileWrapper
 from .models import Stream_Data, Subject_Data
 from django.shortcuts import render
 from django.http import HttpResponse
-import os
-import getpass
+import os  # To update database for recursion visir every file in directory
+import getpass  # To get username of the system
+
 
 # Homepage
 def home(request):
-    #.distinct()to only get single copies of all streams
+    # .distinct()to only get single copies of all streams
     all_streams = Stream_Data.objects.values_list('stream', flat=True).distinct()
     return render(request, 'practicals/home.html', {
         'all_streams': all_streams,
@@ -62,7 +63,7 @@ def view_code(request, stream_id, subject_id):
     stream_obj = Stream_Data.objects.get(pk=stream_id)
     stream = stream_obj.stream
     year = stream_obj.year
-    #subject_rows = Subject_Data.objects.filter(stream_id=stream_id) The below line will the exactly same thing
+    # subject_rows = Subject_Data.objects.filter(stream_id=stream_id) The below line will the exactly same thing
     subject_rows = stream_obj.subject_data_set.all()
     subjects = subject_rows.values_list('subject', flat=True).distinct()
     assignments = subject_rows.filter(subject=subjects[int(subject_id) - 1])
@@ -80,11 +81,10 @@ def view_code(request, stream_id, subject_id):
     if getpass.getuser() == 'rsniper':
         base_directory = '/home/rsniper/SPPU_Student/'
     if count:
-
         filename = assignments[int(count)].filename
         directory = base_directory + 'codes/' + stream + '/' + year + '/' + subject + '/' + filename
         fp = open(directory, 'r')
-        code = fp.read().split('*/') #To not display question while viewing code
+        code = fp.read().split('*/')  # To not display question while viewing code
         fp.close()
         return render(request, 'practicals/code.html', {
             'assignment': assignments[int(count)], 'code': code[1],
@@ -95,8 +95,8 @@ def view_code(request, stream_id, subject_id):
             filename = assignments[int(count)].filename
             directory = base_directory + 'codes/' + stream + '/' + year + '/' + subject + '/' + filename
             fp = open(directory, 'r')
-            fileWrap = FileWrapper(fp)
-            response = HttpResponse(fileWrap, content_type='application/force-download')
+            file_wrap = FileWrapper(fp)
+            response = HttpResponse(file_wrap, content_type='application/force-download')
             response['Content-Disposition'] = 'attachment; filename=%s' % filename
             response['Content-Length'] = os.path.getsize(directory)
             return response
@@ -107,10 +107,13 @@ def view_code(request, stream_id, subject_id):
 # This adds all the new codes to the database
 # Warning do not use on hosted server- only on local server.
 def refresh(request):
+    # Notice here 'rsniper' is just the username of the currently hosted site on pythonanywhere.
+    # It is subjected to change
     if getpass.getuser() == 'rsniper':
         return HttpResponse("Please don't use this URL just yet")
     osdir = os.walk('codes/')
-
+    added_subjects = ()
+    added_programs = ()
     every_directory = set((), )
     for root, dirs, files in osdir:
         if root.count('/') == 3 and files:
@@ -129,7 +132,7 @@ def refresh(request):
         subject = s[2]
         filename = s[3]
         title = filename.split('.')[1]
-        #Important add base_directory to deirctory when deploying
+        # Important add base_directory to directory when deploying
 
         # base_directory = '/home/rsniper/SPPU_Student/'
         directory = 'codes/' + stream + '/' + year + '/' + subject + '/' + filename
@@ -142,16 +145,23 @@ def refresh(request):
         if Stream_Data.objects.filter(stream=stream, year=year):
             print("Exists")
         else:
-            newStream = Stream_Data(stream=stream, year=year)
-            newStream.save()
+            new_stream = Stream_Data(stream=stream, year=year)
+            new_stream.save()
             print("Dosent")
+            added_subjects.add(stream)
         if Subject_Data.objects.filter(stream_id=Stream_Data.objects.filter(stream=stream, year=year)[0],
                                        subject=subject, assignment_title=title, problem_statement=problem,
                                        filename=filename):
             print("Exists")
         else:
-            newSubject = Subject_Data(stream_id=Stream_Data.objects.filter(stream=stream, year=year)[0],
-                                      subject=subject, assignment_title=title, problem_statement=problem,
-                                      filename=filename)
-            newSubject.save()
-    return HttpResponse("Done successfully")
+            new_subject = Subject_Data(stream_id=Stream_Data.objects.filter(stream=stream, year=year)[0],
+                                       subject=subject, assignment_title=title, problem_statement=problem,
+                                       filename=filename)
+            new_subject.save()
+            added_programs.add(problem)
+
+    return render(request, 'practicals/new_addition.html',
+                  {
+                      'subject_count': len(added_subjects), 'program_count': len(added_programs),
+                      'subjects': added_subjects, 'programs': added_programs
+                  })
