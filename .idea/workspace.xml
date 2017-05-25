@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b17a5b4-9d73-4d9e-bf97-bdc278d769d8" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/index.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/practicals/static/practicals/code.svg" afterPath="$PROJECT_DIR$/practicals/static/practicals/images/code.svg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/practicals/static/practicals/download.svg" afterPath="$PROJECT_DIR$/practicals/static/practicals/images/download.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codes/Computer Engineering/SE/Data Structures and Algorithms/1.set.cpp" afterPath="$PROJECT_DIR$/codes/Computer Engineering/SE/Data Structures and Algorithms/1.set.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/practicals/templates/practicals/code.html" afterPath="$PROJECT_DIR$/practicals/templates/practicals/code.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/practicals/templates/practicals/new_addition.html" afterPath="$PROJECT_DIR$/practicals/templates/practicals/new_addition.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/practicals/templates/practicals/subject.html" afterPath="$PROJECT_DIR$/practicals/templates/practicals/subject.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/practicals/views.py" afterPath="$PROJECT_DIR$/practicals/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SPPU_Student/to_do_list" afterPath="$PROJECT_DIR$/SPPU_Student/to_do_list" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -52,8 +45,8 @@
       <file leaf-file-name="to_do_list" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SPPU_Student/to_do_list">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="240">
+              <caret line="16" column="14" lean-forward="false" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -1013,8 +1006,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SPPU_Student/to_do_list">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="240">
+          <caret line="16" column="14" lean-forward="false" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
           <folding />
         </state>
       </provider>
