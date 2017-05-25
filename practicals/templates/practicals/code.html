@@ -6,7 +6,7 @@
     {% load static %}
 
     <!link rel="stylesheet" href="{% static 'practicals/styles/googlecode.css' %}">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/googlecode.min.css">
+    <!link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/googlecode.min.css">
     <link rel="stylesheet" href="{% static 'practicals/code_style.css' %}">
 </head>
 
@@ -18,19 +18,18 @@
     <div class='wrapper'>
 
 
-          <pre><code class="c++" id="code">{{ code }}
-          </code>
+          <pre style="background-color: #eeeeee;">{{ test_code|safe }}
           </pre>
     </div>
 </div>
 </body>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
 <!script src="{% static 'practicals/highlight.pack.js' %}"><!/script>
-<script src="{% static 'practicals/highlightjs-line-numbers.min.js' %}"></script>
-<script>
+<!script src="{% static 'practicals/highlightjs-line-numbers.min.js' %}"><!/script>
+<!script>
     hljs.initHighlightingOnLoad();
     hljs.initLineNumbersOnLoad();
-</script>
+<!/script>
 
 </html>
 

@@ -4,6 +4,9 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import os  # To update database for recursion visir every file in directory
 import getpass  # To get username of the system
+from pygments import highlight
+from pygments.lexers.c_cpp import CppLexer
+from pygments.formatters.html import HtmlFormatter
 
 
 # Homepage
@@ -86,8 +89,9 @@ def view_code(request, stream_id, subject_id):
         fp = open(directory, 'r')
         code = fp.read().split('*/')  # To not display question while viewing code
         fp.close()
+        test_code = highlight(code[1],CppLexer(),HtmlFormatter())
         return render(request, 'practicals/code.html', {
-            'assignment': assignments[int(count)], 'code': code[1],
+            'assignment': assignments[int(count)], 'code': code[1], 'test_code':test_code
         })
     else:
         count = request.GET.get('download')
@@ -112,8 +116,8 @@ def refresh(request):
     if getpass.getuser() == 'rsniper':
         return HttpResponse("Please don't use this URL just yet")
     osdir = os.walk('codes/')
-    added_subjects = ()
-    added_programs = ()
+    added_subjects = []
+    added_programs = []
     every_directory = set((), )
     for root, dirs, files in osdir:
         if root.count('/') == 3 and files:
@@ -148,7 +152,7 @@ def refresh(request):
             new_stream = Stream_Data(stream=stream, year=year)
             new_stream.save()
             print("Dosent")
-            added_subjects.add(stream)
+            added_subjects.append(stream)
         if Subject_Data.objects.filter(stream_id=Stream_Data.objects.filter(stream=stream, year=year)[0],
                                        subject=subject, assignment_title=title, problem_statement=problem,
                                        filename=filename):
@@ -158,7 +162,7 @@ def refresh(request):
                                        subject=subject, assignment_title=title, problem_statement=problem,
                                        filename=filename)
             new_subject.save()
-            added_programs.add(problem)
+            added_programs.append(problem)
 
     return render(request, 'practicals/new_addition.html',
                   {
