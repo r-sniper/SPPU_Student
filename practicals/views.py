@@ -44,8 +44,8 @@ def change_subject(request, stream_id):
     print(getpass.getuser())
     if index:
         index -= 1
-        assignment_title = subject_rows.filter(subject=subjects[index]).values_list('assignment_title', flat=True)
-        problem_statement = subject_rows.filter(subject=subjects[index]).values_list('problem_statement', flat=True)
+        assignment_title = subjects.filter(subject=subjects[index]).values_list('assignment_title', flat=True)
+        problem_statement = subjects.filter(subject=subjects[index]).values_list('problem_statement', flat=True)
         list_of_assign = zip(assignment_title, problem_statement)
         # print(assignments)
         # print(stream_id)
