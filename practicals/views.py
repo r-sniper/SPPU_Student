@@ -62,7 +62,8 @@ def view_code(request, stream_id, subject_id):
     stream_obj = Stream_Data.objects.get(pk=stream_id)
     stream = stream_obj.stream
     year = stream_obj.year
-    subject_rows = Subject_Data.objects.filter(stream_id=stream_id)
+    #subject_rows = Subject_Data.objects.filter(stream_id=stream_id) The below line will the exactly same thing
+    subject_rows = stream_obj.subject_data_set.all()
     subjects = subject_rows.values_list('subject', flat=True).distinct()
     assignments = subject_rows.filter(subject=subjects[int(subject_id) - 1])
     subject = subjects[int(subject_id) - 1]
@@ -83,9 +84,10 @@ def view_code(request, stream_id, subject_id):
         filename = assignments[int(count)].filename
         directory = base_directory + 'codes/' + stream + '/' + year + '/' + subject + '/' + filename
         fp = open(directory, 'r')
-        code = fp.read()
+        code = fp.read().split('*/') #To not display question while viewing code
+        fp.close()
         return render(request, 'practicals/code.html', {
-            'assignment': assignments[int(count)], 'code': code,
+            'assignment': assignments[int(count)], 'code': code[1],
         })
     else:
         count = request.GET.get('download')
@@ -109,7 +111,7 @@ def refresh(request):
         return HttpResponse("Please don't use this URL just yet")
     osdir = os.walk('codes/')
 
-    everything = set((), )
+    every_directory = set((), )
     for root, dirs, files in osdir:
         if root.count('/') == 3 and files:
             # print(root)
@@ -117,18 +119,19 @@ def refresh(request):
             line = root.split('/')
             for f in files:
                 temp = (line[1], line[2], line[3], f)
-                everything.add(temp)
+                every_directory.add(temp)
 
                 # print('Stream:' + line[2])
 
-    for s in everything:
+    for s in every_directory:
         stream = s[0]
         year = s[1]
         subject = s[2]
         filename = s[3]
         title = filename.split('.')[1]
-        #Important add root to deirctory when deploying
-        # root = '/home/rsniper/SPPU_Student/'
+        #Important add base_directory to deirctory when deploying
+
+        # base_directory = '/home/rsniper/SPPU_Student/'
         directory = 'codes/' + stream + '/' + year + '/' + subject + '/' + filename
         try:
             fp = open(directory, 'r')
