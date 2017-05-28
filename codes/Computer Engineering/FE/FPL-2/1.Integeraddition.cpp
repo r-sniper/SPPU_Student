@@ -1,5 +1,5 @@
 /*
-write a c++ program to add integer numbers
+Write a C++ program to add integer numbers
 */
 #include <iostream>
 

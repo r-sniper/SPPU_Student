@@ -16,20 +16,27 @@ STRUCTURE
 '''
 
 
-class Stream_Data(models.Model):
+class StreamData(models.Model):
     stream = models.CharField(max_length=100)
     year = models.CharField(max_length=5)
 
     def __str__(self):
-        return (str(self.id) + " " + self.stream + "-" + self.year)
+        return str(self.id) + " " + self.stream + "-" + self.year
 
 
-class Subject_Data(models.Model):
-    stream_id = models.ForeignKey(Stream_Data, on_delete=models.CASCADE)
+class AllSubject(models.Model):
+    stream_obj = models.ForeignKey(StreamData, on_delete=models.CASCADE)
     subject = models.CharField(max_length=100)
-    assignment_title = models.CharField(max_length=250)
-    problem_statement = models.TextField(max_length=2500)
-    filename = models.CharField(max_length=20)
 
     def __str__(self):
-        return (str(self.id) + " " + self.subject + " " + self.assignment_title)
+        return (str(self.id) + " " + self.subject)
+
+
+class Assignment(models.Model):
+    subject_obj = models.ForeignKey(AllSubject, on_delete=models.CASCADE)
+    problem_statement = models.TextField(max_length=2500)
+    title = models.CharField(max_length=100)
+    filename = models.CharField(max_length=100)
+
+    def __str__(self):
+        return (self.title + " " + self.filename)

@@ -10,11 +10,13 @@ Colors schemes:
     font-family: head;
     src: url(fonts/Roboto-Medium.ttf);
 }
+
 @font-face {
     font-family: ui;
     src: url(fonts/Roboto-Regular.ttf);
 }
-html{
-	background: #05668d;
-	min-height: 100%;
+
+html {
+    background: #05668d;
+    min-height: 100%;
 }

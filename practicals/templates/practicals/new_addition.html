@@ -4,6 +4,17 @@
     <title>Title</title>
 </head>
 <body>
+{% ifequal stream_count 0 %}
+    No stream were added
+    <br>
+{% else %}
+    Following subjects were added:<br>
+    {% for stream in streams %}
+
+        {{ stream }}
+        <br>
+    {% endfor %}
+{% endifequal %}
 
 {% ifequal subject_count 0 %}
     No subjects were added

@@ -1,18 +1,22 @@
 @import "main.css";
+
 body {
-    margin: 0;font-family: "head", sans-serif;
+    margin: 0;
+    font-family: "head", sans-serif;
 }
 
 .left, .right {
     display: inline-block;
     height: 100vh;
 }
-button{
+
+button {
     font-family: head;
 }
+
 .left {
 
-    background:  #05668d;
+    background: #05668d;
     float: left;
     width: 22%;
 }
@@ -25,22 +29,23 @@ button{
 }
 
 .leftButton {
-  display: inline-block;
-  background-color: transparent;
-  margin: 0 10px 0 0;
-  padding: 15px 30px;
-  width: 100%;
-  font-size: 20px;
-  font-family: "head",serif;
-  line-height: 1.8;
-  box-shadow: none;
-  border: none;
-  line-height: 22px;
+    display: inline-block;
+    background-color: transparent;
+    margin: 0 10px 0 0;
+    padding: 15px 30px;
+    width: 100%;
+    font-size: 20px;
+    font-family: "head", serif;
+    line-height: 1.8;
+    box-shadow: none;
+    border: none;
+    line-height: 22px;
 }
 
 .leftButton:focus {
-  outline: none
+    outline: none
 }
+
 p:hover {
     background: #737373;
 
@@ -70,7 +75,8 @@ details[open] > summary {
     color: #333333;
     font-weight: bold;
 }
-pre{
+
+pre {
     padding: 5px 5px 5px 50px;
 }
 

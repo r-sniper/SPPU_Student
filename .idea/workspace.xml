@@ -2,8 +2,119 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b17a5b4-9d73-4d9e-bf97-bdc278d769d8" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codes/Bachelor of Science(Computer)/SY/Ds using c and Opps using c++/1a.bubblesort.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codes/Bachelor of Science(Computer)/SY/Ds using c and Opps using c++/2a.randomarrayinsertion.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codes/Bachelor of Science(Computer)/SY/Ds using c and Opps using c++/2b.singlylinklist.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codes/Bachelor of Science(Computer)/SY/Ds using c and Opps using c++/3a.Insertionsort.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codes/Bachelor of Science(Computer)/SY/Ds using c and Opps using c++/3b.adjacenyMatrix.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codes/Bachelor of Science(Computer)/SY/Ds using c and Opps using c++/4a.bubbleSortFile.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codes/Bachelor of Science(Computer)/SY/Ds using c and Opps using c++/4b.adjanceyMatrix.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/agate.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/androidstudio.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/arduino-light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/arta.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/ascetic.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/atelier-cave-dark.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/atelier-cave-light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/atelier-dune-dark.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/atelier-dune-light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/atelier-estuary-dark.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/atelier-estuary-light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/atelier-forest-dark.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/atelier-forest-light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/atelier-heath-dark.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/atelier-heath-light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/atelier-lakeside-dark.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/atelier-lakeside-light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/atelier-plateau-dark.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/atelier-plateau-light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/atelier-savanna-dark.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/atelier-savanna-light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/atelier-seaside-dark.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/atelier-seaside-light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/atelier-sulphurpool-dark.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/atelier-sulphurpool-light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/atom-one-dark.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/atom-one-light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/brown-paper.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/brown-papersq.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/codepen-embed.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/color-brewer.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/darcula.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/dark.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/darkula.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/default.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/docco.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/dracula.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/far.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/foundation.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/github-gist.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/github.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/googlecode.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/grayscale.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/gruvbox-dark.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/gruvbox-light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/hopscotch.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/hybrid.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/idea.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/ir-black.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/kimbie.dark.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/kimbie.light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/magula.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/mono-blue.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/monokai-sublime.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/monokai.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/obsidian.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/ocean.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/paraiso-dark.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/paraiso-light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/pojoaque.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/pojoaque.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/purebasic.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/qtcreator_dark.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/qtcreator_light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/railscasts.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/rainbow.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/school-book.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/school-book.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/solarized-dark.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/solarized-light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/sunburst.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/tomorrow-night-blue.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/tomorrow-night-bright.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/tomorrow-night-eighties.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/tomorrow-night.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/tomorrow.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/vs.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/xcode.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/xt256.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/practicals/static/practicals/styles/zenburn.css" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/SPPU_Student.iml" afterPath="$PROJECT_DIR$/.idea/SPPU_Student.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SPPU_Student/settings.py" afterPath="$PROJECT_DIR$/SPPU_Student/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SPPU_Student/urls.py" afterPath="$PROJECT_DIR$/SPPU_Student/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SPPU_Student/wsgi.py" afterPath="$PROJECT_DIR$/SPPU_Student/wsgi.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codes/Computer Engineering/FE/FPL-2/1.Integeraddition.cpp" afterPath="$PROJECT_DIR$/codes/Computer Engineering/FE/FPL-2/1.Integeraddition.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/practicals/admin.py" afterPath="$PROJECT_DIR$/practicals/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/practicals/apps.py" afterPath="$PROJECT_DIR$/practicals/apps.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/practicals/migrations/0001_initial.py" afterPath="$PROJECT_DIR$/practicals/migrations/0001_initial.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/practicals/models.py" afterPath="$PROJECT_DIR$/practicals/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/practicals/static/practicals/code_style.css" afterPath="$PROJECT_DIR$/practicals/static/practicals/code_style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/practicals/static/practicals/home_style.css" afterPath="$PROJECT_DIR$/practicals/static/practicals/home_style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/practicals/static/practicals/images/code.svg" afterPath="$PROJECT_DIR$/practicals/static/practicals/images/code.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/practicals/static/practicals/images/download.svg" afterPath="$PROJECT_DIR$/practicals/static/practicals/images/download.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/practicals/static/practicals/main.css" afterPath="$PROJECT_DIR$/practicals/static/practicals/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/practicals/static/practicals/subject_style.css" afterPath="$PROJECT_DIR$/practicals/static/practicals/subject_style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/practicals/static/practicals/vs.css" afterPath="$PROJECT_DIR$/practicals/static/practicals/vs.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/practicals/templates/practicals/code.html" afterPath="$PROJECT_DIR$/practicals/templates/practicals/code.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/practicals/templates/practicals/home.html" afterPath="$PROJECT_DIR$/practicals/templates/practicals/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/practicals/templates/practicals/new_addition.html" afterPath="$PROJECT_DIR$/practicals/templates/practicals/new_addition.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/practicals/templates/practicals/subject.html" afterPath="$PROJECT_DIR$/practicals/templates/practicals/subject.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/practicals/tests.py" afterPath="$PROJECT_DIR$/practicals/tests.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/practicals/urls.py" afterPath="$PROJECT_DIR$/practicals/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/practicals/views.py" afterPath="$PROJECT_DIR$/practicals/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,40 +144,64 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/practicals/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="92" column="32" lean-forward="true" selection-start-line="92" selection-start-column="32" selection-end-line="92" selection-end-column="32" />
+            <state relative-caret-position="303">
+              <caret line="85" column="27" lean-forward="false" selection-start-line="85" selection-start-column="27" selection-end-line="85" selection-end-column="27" />
               <folding>
-                <element signature="e#0#36#0" expanded="true" />
+                <element signature="e#0#47#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vs.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/practicals/static/practicals/vs.css">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/practicals/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state relative-caret-position="306">
+              <caret line="19" column="56" lean-forward="false" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="subject.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/practicals/templates/practicals/subject.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="23" column="11" lean-forward="true" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="code.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/practicals/templates/practicals/code.html">
+      <file leaf-file-name="new_addition.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/practicals/templates/practicals/new_addition.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="87" lean-forward="false" selection-start-line="25" selection-start-column="87" selection-end-line="25" selection-end-column="87" />
+            <state relative-caret-position="360">
+              <caret line="20" column="8" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="code_style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/practicals/static/practicals/code_style.css">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/practicals/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="40" column="5" lean-forward="false" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+            <state relative-caret-position="353">
+              <caret line="31" column="49" lean-forward="false" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
+              <folding>
+                <element signature="e#24#63#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/practicals/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="10" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -91,6 +226,7 @@
       <find>directory</find>
       <find>opa</find>
       <find>.count</find>
+      <find>all</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -105,24 +241,25 @@
         <option value="$PROJECT_DIR$/SPPU_Practicals/settings.py" />
         <option value="$PROJECT_DIR$/practicals/apps.py" />
         <option value="$PROJECT_DIR$/SPPU_Practicals/urls.py" />
-        <option value="$PROJECT_DIR$/practicals/admin.py" />
         <option value="$PROJECT_DIR$/practicals/templates/practicals/test.html" />
-        <option value="$PROJECT_DIR$/practicals/urls.py" />
-        <option value="$PROJECT_DIR$/practicals/templates/practicals/home.html" />
         <option value="$PROJECT_DIR$/practicals/static/practicals/main.css" />
         <option value="$PROJECT_DIR$/practicals/static/practicals/home_style.css" />
         <option value="$PROJECT_DIR$/practicals/templates/practicals/refresh.html" />
-        <option value="$PROJECT_DIR$/practicals/templates/practicals/new_addition.html" />
         <option value="$PROJECT_DIR$/codes/Computer Engineering/SE/Data Structures and Algorithms/1.set.cpp" />
-        <option value="$PROJECT_DIR$/practicals/models.py" />
         <option value="$PROJECT_DIR$/SPPU_Student/to_do_list" />
         <option value="$PROJECT_DIR$/SPPU_Student/settings.py" />
-        <option value="$PROJECT_DIR$/practicals/templates/practicals/subject.html" />
         <option value="$PROJECT_DIR$/practicals/static/practicals/subject_style.css" />
         <option value="$PROJECT_DIR$/practicals/static/practicals/vs.css" />
         <option value="$PROJECT_DIR$/practicals/static/practicals/code_style.css" />
-        <option value="$PROJECT_DIR$/practicals/views.py" />
         <option value="$PROJECT_DIR$/practicals/templates/practicals/code.html" />
+        <option value="$PROJECT_DIR$/practicals/templates/practicals/home.html" />
+        <option value="$PROJECT_DIR$/practicals/admin.py" />
+        <option value="$PROJECT_DIR$/codes/Computer Engineering/FE/FPL-2/1.Integeraddition.cpp" />
+        <option value="$PROJECT_DIR$/practicals/templates/practicals/new_addition.html" />
+        <option value="$PROJECT_DIR$/practicals/models.py" />
+        <option value="$PROJECT_DIR$/practicals/urls.py" />
+        <option value="$PROJECT_DIR$/practicals/templates/practicals/subject.html" />
+        <option value="$PROJECT_DIR$/practicals/views.py" />
       </list>
     </option>
   </component>
@@ -133,10 +270,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="61" />
-    <option name="y" value="24" />
-    <option name="width" value="1305" />
-    <option name="height" value="744" />
+    <option name="x" value="64" />
+    <option name="y" value="-11" />
+    <option name="width" value="1857" />
+    <option name="height" value="1092" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -156,6 +293,34 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="SPPU_Student">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="SPPU_Student">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="practicals">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -163,6 +328,20 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="SPPU_Student" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SPPU_Student" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SPPU_Student" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SPPU_Student" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="SPPU_Student" />
@@ -205,79 +384,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SPPU_Student" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SPPU_Student" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="practicals" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="practicals" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SPPU_Student" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SPPU_Student" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SPPU_Student" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="SPPU_Student">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="SPPU_Student">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="practicals">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/file.py" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="SearchEverywhereHistoryKey" value="SPPU_Practicals&#9;RUN_CONFIGURATION&#9;SPPU_Practicals" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -327,6 +442,13 @@
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
       <option name="OPTIONS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
       <method />
     </configuration>
     <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
@@ -405,6 +527,7 @@
       <option name="SCRIPT_NAME" value="" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="Tox" factoryName="Tox">
@@ -434,26 +557,6 @@
       <scripts />
       <node-interpreter value="project" />
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Attests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="SPPU_Practicals" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -487,15 +590,10 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="SPPU_Practicals" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
+      <option name="_new_regexPattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;.&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
@@ -509,16 +607,9 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="SPPU_Practicals" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="false" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;.&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="py.test">
@@ -532,18 +623,10 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="SPPU_Practicals" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="testToRun" value="" />
-      <option name="keywords" value="" />
-      <option name="params" value="" />
-      <option name="USE_PARAM" value="false" />
-      <option name="USE_KEYWORD" value="false" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;.&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method />
     </configuration>
     <configuration default="false" name="SPPU_Student" type="Python.DjangoServer" factoryName="Django server">
@@ -573,6 +656,26 @@
     <list size="1">
       <item index="0" class="java.lang.String" itemvalue="Django server.SPPU_Student" />
     </list>
+    <configuration default="true" type="tests" factoryName="Attests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="SPPU_Practicals" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -600,20 +703,21 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="61" y="24" width="1305" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22875299" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32817337" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.50193477" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946378" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32817337" sideWeight="0.49806523" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50928795" sideWeight="0.49806523" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.50835073" sideWeight="0.49806523" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32776618" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23438364" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946378" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32817337" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39969134" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946378" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -621,9 +725,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946378" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -655,32 +757,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/practicals/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/practicals/templates/practicals/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="41" column="8" lean-forward="true" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/practicals/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="15" lean-forward="true" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/practicals/static/practicals/home_style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="684">
@@ -835,20 +916,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/practicals/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/practicals/static/practicals/images/code.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/practicals/static/practicals/images/code.svg" />
     <entry file="file://$PROJECT_DIR$/practicals/static/practicals/styles/vs.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -866,31 +934,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/practicals/urls(1).py" />
     <entry file="file://$PROJECT_DIR$/practicals/tests(1).py" />
-    <entry file="file://$PROJECT_DIR$/practicals/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SPPU_Student/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/practicals/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="47" lean-forward="false" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/practicals/templates/practicals/new_addition.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -908,13 +955,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/practicals/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/practicals/static/practicals/index.js" />
     <entry file="file://$PROJECT_DIR$/practicals/static/practicals/home_style.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -923,21 +963,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SPPU_Student/to_do_list">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/practicals/templates/practicals/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="18" column="74" lean-forward="false" selection-start-line="18" selection-start-column="74" selection-end-line="18" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/SPPU_Student/to_do_list" />
     <entry file="file://$PROJECT_DIR$/SPPU_Student/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="419">
@@ -945,20 +971,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/practicals/templates/practicals/subject.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="94" lean-forward="false" selection-start-line="5" selection-start-column="94" selection-end-line="5" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/practicals/static/practicals/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="1" lean-forward="false" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/practicals/static/practicals/main.css" />
     <entry file="file://$PROJECT_DIR$/practicals/static/practicals/subject_style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -966,36 +979,115 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/practicals/static/practicals/vs.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/practicals/static/practicals/vs.css" />
     <entry file="file://$PROJECT_DIR$/practicals/static/practicals/code_style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" column="5" lean-forward="false" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+        <state relative-caret-position="1458">
+          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/practicals/templates/practicals/code.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="87" lean-forward="false" selection-start-line="25" selection-start-column="87" selection-end-line="25" selection-end-column="87" />
+        <state relative-caret-position="450">
+          <caret line="25" column="67" lean-forward="false" selection-start-line="25" selection-start-column="67" selection-end-line="25" selection-end-column="67" />
+          <folding>
+            <marker date="1495972729633" expanded="true" signature="1010:1017" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/practicals/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codes/Computer Engineering/FE/FPL-1/1.helloworld.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/practicals/templates/practicals/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="18" column="57" lean-forward="false" selection-start-line="18" selection-start-column="57" selection-end-line="18" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/practicals/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codes/Computer Engineering/FE/FPL-2/1.Integeraddition.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="18" column="23" lean-forward="false" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/file.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="38" lean-forward="true" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/practicals/templates/practicals/new_addition.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="8" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/practicals/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="31" column="49" lean-forward="false" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
+          <folding>
+            <element signature="e#24#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/practicals/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="19" column="56" lean-forward="false" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/practicals/templates/practicals/subject.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="11" lean-forward="true" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/practicals/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="92" column="32" lean-forward="true" selection-start-line="92" selection-start-column="32" selection-end-line="92" selection-end-column="32" />
+        <state relative-caret-position="303">
+          <caret line="85" column="27" lean-forward="false" selection-start-line="85" selection-start-column="27" selection-end-line="85" selection-end-column="27" />
           <folding>
-            <element signature="e#0#36#0" expanded="true" />
+            <element signature="e#0#47#0" expanded="true" />
           </folding>
         </state>
       </provider>

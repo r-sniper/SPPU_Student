@@ -10,13 +10,13 @@
     <form id='submit_subject' action="{% url 'selection:change_subject' stream_id %}" method="get">
         <div class="left">
             {% for subject in subjects %}
-                {% ifequal forloop.counter selected_subject_id %}
+                {% ifequal subject.pk selected_subject_id %}
                     <button style="background: #f0f0f0;border-left:5px solid #05668d;border-top: 5px solid #05668d;"
-                            id="subject{{ forloop.counter }}" name="subject"
-                            value="{{ forloop.counter }}" class="leftButton">{{ subject }}</button>
+                            id="subject{{ subject.pk }}" name="subject"
+                            value="{{ subject.pk }}" class="leftButton">{{ subject.subject }}</button>
                 {% else %}
-                    <button id="subject{{ forloop.counter }}" name="subject" value="{{ forloop.counter }}"
-                            class="leftButton">{{ subject }}</button>
+                    <button id="subject{{ subject.pk }}" name="subject" value="{{ subject.pk }}"
+                            class="leftButton">{{ subject.subject }}</button>
                 {% endifequal %}
                 <br>
             {% endfor %}
@@ -24,9 +24,9 @@
     </form>
     <form id="select_assignment" action="{% url 'selection:view_code' stream_id selected_subject_id %}" method="get">
         <div class="right">
-            {% for element in list_of_assign %}
+            {% for assignment in assignments %}
                 <details>
-                    <summary>{{ element.0 }}
+                    <summary>{{ assignment.title }}
                         <div class="btn">
                             <button class="rightButtons" value="{{ forloop.counter0 }}" name="download"
                                     id="download{{ forloop.counter0 }}"><img
@@ -37,7 +37,7 @@
                                     src="{% static 'practicals/images/code.svg' %}"></button>
                         </div>
                     </summary>
-                    <pre>{{ element.1 }}
+                    <pre>{{ assignment.problem_statement }}
                 </pre>
                 </details>
             {% endfor %}

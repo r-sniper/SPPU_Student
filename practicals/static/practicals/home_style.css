@@ -1,58 +1,68 @@
 @import "main.css";
-body{
-	font-family: 'ui', sans-serif;
-	font-size: 20px;
-	margin: 0;
-}
-#head{
-	margin-top: 2px;
-	margin-bottom: 10px; 
-}
-.title h1{
-	text-align: center;
-	background: rgba(0,0,0,.3);
-	font-size: 3em;
-	color:white;
-	font-family: 'head', cursive;
 
-	margin-bottom: 10px;
-	margin-top: 0; 
-	padding-top:10px;
-	margin-bottom: 80px;  
+body {
+    font-family: 'ui', sans-serif;
+    font-size: 20px;
+    margin: 0;
 }
-.wrap{
-	margin: 0 auto;text-align: center;
-} 
-#container{
-	color:#1f1f1f;
-	padding: 20px 20px 5px 20px;
-	background: #f1f1f1;
-	margin: 0 auto;
+
+#head {
+    margin-top: 2px;
+    margin-bottom: 10px;
+}
+
+.title h1 {
+    text-align: center;
+    background: rgba(0, 0, 0, .3);
+    font-size: 3em;
+    color: white;
+    font-family: 'head', cursive;
+
+    margin-bottom: 10px;
+    margin-top: 0;
+    padding-top: 10px;
+    margin-bottom: 80px;
+}
+
+.wrap {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#container {
+    color: #1f1f1f;
+    padding: 20px 20px 5px 20px;
+    background: #f1f1f1;
+    margin: 0 auto;
     border: 10px;
-	max-width: 300px;
+    max-width: 300px;
     box-shadow: 5px 5px 15px #05668d;
 }
- select{
-	display:inline-block;
-	background: #DDDDDD;
-	outline: none;
-	border: none;
-	color: #707070;
-	margin-bottom: 2px;
-	padding: 10px;
-	font-size: .8em;
-	text-align: center;
+
+select {
+    display: inline-block;
+    background: #DDDDDD;
+    outline: none;
+    border: none;
+    color: #707070;
+    margin-bottom: 2px;
+    padding: 10px;
+    font-size: .8em;
+    text-align: center;
 }
-hr{
-	border-top: 1px dashed #8c8b8b;
-	border-bottom: 1px dashed #fff;
+
+hr {
+    border-top: 1px dashed #8c8b8b;
+    border-bottom: 1px dashed #fff;
 }
-#container select option{
-	background-color: #296A79;
-	color: white;	
+
+#container select option {
+    background-color: #296A79;
+    color: white;
 }
-button{
-background-color: #46acc2; /* Green */
+
+button {
+    background-color: #46acc2; /* Green */
     border: none;
     color: white;
     width: 50px;
@@ -61,13 +71,16 @@ background-color: #46acc2; /* Green */
     display: none;
 
 }
-#year , #stream {
-	width: 100%;
-	margin-bottom:15px;
+
+#year, #stream {
+    width: 100%;
+    margin-bottom: 15px;
 }
-option[value="hide"]{
-   display: none;
+
+option[value="hide"] {
+    display: none;
 }
+
 #year {
-	 display: none;
+    display: none;
 }
