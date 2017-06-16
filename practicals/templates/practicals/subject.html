@@ -1,48 +1,236 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Second Page</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SPPU Codes</title>
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'practicals/subject_style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'practicals/code_style.css' %}">
+    <style>
+        body, html, .row-offcanvas {
+            height: 100%;
+        }
+
+        body {
+            padding-top: 50px;
+            background: #f5f5f5;
+        }
+
+        #sidebar {
+            width: inherit;
+            min-width: 220px;
+            max-width: 220px;
+            background-color: #e5e5e5;
+            float: left;
+            height: 100%;
+            position: relative;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        #main {
+            height: 100%;
+            overflow: auto;
+        }
+
+        .panel-heading {
+            padding: 0;
+        }
+
+        .full {
+            display: block;
+            height: 100%;
+        }
+
+        select {
+            padding: 5px;
+        }
+
+        .navbar-toggle {
+            background: #d9534f;
+
+        }
+
+        @media (max-width: 1046px) {
+            .navbar-right {
+                float: left !important;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .row-offcanvas {
+                position: relative;
+                -webkit-transition: all 0.25s ease-out;
+                -moz-transition: all 0.25s ease-out;
+                transition: all 0.25s ease-out;
+                width: calc(100% + 220px);
+            }
+
+            .row-offcanvas-left {
+                left: -220px;
+            }
+
+            .row-offcanvas-left.active {
+                left: 0;
+            }
+
+            .sidebar-offcanvas {
+                position: absolute;
+                top: 0;
+            }
+        }
+
+        /*Custom Style for aesthetics*/
+        .btn-default {
+            margin-right: 5px;
+            height: 35px;
+        }
+
+        .panel-default {
+            padding: 2px;
+        }
+
+        a {
+            text-decoration: none !important;
+        }
+    </style>
 </head>
 <body>
-<div class="wrap">
-    <form id='submit_subject' action="{% url 'selection:change_subject' stream_id %}" method="get">
-        <div class="left">
-            {% for subject in subjects %}
-                {% ifequal subject.pk selected_subject_id %}
-                    <button style="background: #f0f0f0;border-left:5px solid #05668d;border-top: 5px solid #05668d;"
-                            id="subject{{ subject.pk }}" name="subject"
-                            value="{{ subject.pk }}" class="leftButton">{{ subject.subject }}</button>
-                {% else %}
-                    <button id="subject{{ subject.pk }}" name="subject" value="{{ subject.pk }}"
-                            class="leftButton">{{ subject.subject }}</button>
-                {% endifequal %}
-                <br>
-            {% endfor %}
-        </div>
-    </form>
-    <form id="select_assignment" action="{% url 'selection:view_code' stream_id selected_subject_id %}" method="get">
-        <div class="right">
-            {% for assignment in assignments %}
-                <details>
-                    <summary>{{ assignment.title }}
-                        <div class="btn">
-                            <button class="rightButtons" value="{{ forloop.counter0 }}" name="download"
-                                    id="download{{ forloop.counter0 }}"><img
-                                    src="{% static 'practicals/images/download.svg' %}" width="30px"
-                                    height="30px"></button>
-                            <button class="rightButtons" name="code" id="code{{ forloop.counter0 }}"
-                                    value="{{ forloop.counter0 }}"><span>View Code </span><img
-                                    src="{% static 'practicals/images/code.svg' %}"></button>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">SPPU Codes</a>
+    </div>
+    <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Codes</a></li>
+            <li><a href="#">About Us</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                   aria-expanded="false">Supports US <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Info</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Donate</a></li>
+                </ul>
+            </li>
+        </ul>
+        <form class="navbar-form navbar-right " role="search" method="get" action="{% url 'selection:view_code' %}">
+            <select id="stream" name="stream">
+                {% for stream in all_stream %}
+                    {% ifequal stream selected_stream %}
+                        <option selected="selected">{{ stream }}</option>
+                    {% else %}
+                        <option>{{ stream }}</option>
+                    {% endifequal %}
+                {% endfor %}
+            </select>
+            <select id="year" name="year">
+                {% for year in all_year %}
+                    {% ifequal year selected_year %}
+                        <option selected="selected">{{ year }}</option>
+                    {% else %}
+                        <option>{{ year }}</option>
+                    {% endifequal %}
+                {% endfor %}
+            </select>
+
+            <button name="change" value="change" type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div><!--/.nav-collapse -->
+</div><!--/.navbar -->
+
+<div class="row-offcanvas row-offcanvas-left">
+    <!--Div for sidebar with accordion-->
+    <div id="sidebar" class="sidebar-offcanvas">
+        <div class="col-md-12">
+            <h3>Subject</h3>
+            <form action="{% url 'selection:view_code' %}" method="get">
+                <div class="panel-group" id="accordion">
+                    {% for subject in all_subjects %}
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{ forloop.counter }}"
+                                   class="collapsed full pad">
+                                    {{ subject.subject }}
+                                </a>
+                            </div>
+                            <div id="collapse{{ forloop.counter }}" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    {% for assignment in subject.assignment_set.all %}
+                                        <input type="button" name="{{ subject.id }} {{ assignment.id }}"
+                                               value="{{ assignment.title }}">
+                                    {% endfor %}
+                                </div>
+                            </div>
                         </div>
-                    </summary>
-                    <pre>{{ assignment.problem_statement }}
-                </pre>
-                </details>
-            {% endfor %}
+                    {% endfor %}
+                </div>
+            </form>
         </div>
-    </form>
+    </div>
+    <!--END Div for sidebar with accordion-->
+    <!--Main Content-->
+    <div id="main">
+        <div class="col-md-12">
+            <p class="visible-xs">
+                <button type="button" class="btn btn-danger btn-sm" data-toggle="offcanvas"><i
+                        class="glyphicon glyphicon-chevron-left"></i></button>
+            </p>
+        </div>
+        <div class='wrapper'>
+            <pre id="question">{{ assignment.problem_statement }}</pre>
+        </div>
+        <div class='wrapper'>
+
+
+          <pre style="background-color: #eeeeee;">{{ test_code|safe }}
+          </pre>
+        </div>
+    </div>
+    <!--END Main Content-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle=offcanvas]').click(function () {
+                $('.row-offcanvas').toggleClass('active');
+            });
+        });
+    </script>
+
+    <script>
+        $(function () {
+            $('input').on('click', function () {
+                //alert("onclick");
+                var dataId = $(this).attr("name");
+                //alert(dataId);
+                $.ajax({
+                    url: '/subject/',
+                    data: {
+                        'select_assignment': dataId
+                    },
+                    success: function (data) {
+                        // grab the inner html of the returned div
+                        // so you don't nest a new div#refresh-this-div on every call
+                        //var html = $(data).filter('#refresh-this-div').html();
+                        $('#main').html(data);
+                    }
+                });
+            });
+        });
+    </script>
 </div>
 </body>
 </html>

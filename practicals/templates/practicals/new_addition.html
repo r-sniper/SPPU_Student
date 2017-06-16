@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Title</title>
+    <title>New Additions</title>
 </head>
 <body>
 {% ifequal stream_count 0 %}
@@ -10,7 +10,6 @@
 {% else %}
     Following subjects were added:<br>
     {% for stream in streams %}
-
         {{ stream }}
         <br>
     {% endfor %}
@@ -22,7 +21,6 @@
 {% else %}
     Following subjects were added:<br>
     {% for subject in subjects %}
-
         {{ subject }}
         <br>
     {% endfor %}

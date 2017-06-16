@@ -1,0 +1,4 @@
+1. Validation for teams >50
+2. Loading animations(maybe)
+3. Login
+4. 

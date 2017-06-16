@@ -2,7 +2,7 @@ import getpass  # To get username of the system
 import os  # To update database for recursion visir every file in directory
 from wsgiref.util import FileWrapper
 from django.http import HttpResponse
-from django.shortcuts import render,get_object_or_404
+from django.shortcuts import render, get_object_or_404
 
 from .models import StreamData, AllSubject, Assignment
 from pygments import highlight
@@ -19,87 +19,65 @@ def home(request):
     })
 
 
-# # When Go button is clicked from homepage
-def default_subject(request):
-    if request.GET.get("Go"):
+def test(request):
+    if request.GET.get("Go") or request.GET.get("change"):
         stream = request.GET.get('stream')
         year = request.GET.get('year')
         stream_obj = StreamData.objects.get(stream=stream, year=year)
-        subject_obj = stream_obj.allsubject_set.all()
-        assignments = subject_obj[0].assignment_set.all()
-        return render(request, 'practicals/subject.html', {
-            'assignments': assignments, 'subjects': subject_obj,
-            'stream_id': stream_obj.pk,
-            'selected_subject_id': subject_obj[0].pk,
-        })
-    else:
-
-        return HttpResponse("Some Error Occured. ")
-
-
-#
-def change_subject(request, stream_id):
-    stream_obj = StreamData.objects.get(pk=int(stream_id))
-    subject_obj = stream_obj.allsubject_set.all()
-    subject_id = int(request.GET.get('subject'))
-    print(subject_id)
-    print(getpass.getuser())
-    if subject_id:
-        assignments = subject_obj.get(pk=subject_id).assignment_set.all()
-
-        return render(request, 'practicals/subject.html', {
-            'subjects': subject_obj, 'assignments': assignments, 'selected_subject_id': subject_id,
-            'stream_id': int(stream_id)
-        })
-    else:
-        return HttpResponse("Subject not found")
-
-
-
-def view_code(request, stream_id, subject_id):
-        stream_obj = StreamData.objects.get(pk=stream_id)
-        stream = stream_obj.stream
-        year = stream_obj.year
-        # subject_rows = Subject_Data.objects.filter(stream_id=stream_id) The below line will the exactly same thing
-        subject_obj = AllSubject.objects.get(pk=int(subject_id))
-        assignments = subject_obj.assignment_set.all()
-        subject = subject_obj.subject
-        count = request.GET.get('code')  # It returns value from name (value = requrst.GET.get(name)
-        print(count)
-        # for i in assignments:
-        #     if request.GET.get(str(count)):
-        #         break
-        #     count += 1
-        # print(str(count))
-        # fp = open('codes/Computer Engineering-FE/FPL-1/1.helloworld.c')
-
         base_directory = ''
         if getpass.getuser() == 'rsniper':
             base_directory = '/home/rsniper/SPPU_Student/'
-        if count:
-            filename = assignments[int(count)].filename
-            directory = base_directory + 'codes/' + stream + '/' + year + '/' + subject + '/' + filename
-            fp = open(directory, 'r')
-            code = fp.read().split('*/')  # To not display question while viewing code
-            fp.close()
-            test_code = highlight(code[1],CppLexer(),HtmlFormatter())
-            print(test_code)
-            return render(request, 'practicals/code.html', {
-                'assignment': assignments[int(count)], 'code': code[1], 'test_code':test_code
-            })
-        else:
-            count = request.GET.get('download')
-            if count:
-                filename = assignments[int(count)].filename
-                directory = base_directory + 'codes/' + stream + '/' + year + '/' + subject + '/' + filename
-                fp = open(directory, 'r')
-                file_wrap = FileWrapper(fp)
-                response = HttpResponse(file_wrap, content_type='application/force-download')
-                response['Content-Disposition'] = 'attachment; filename=%s' % filename
-                response['Content-Length'] = os.path.getsize(directory)
-                return response
-            else:
-                return HttpResponse("Oops! Something went wrong.")
+        all_subjects = stream_obj.allsubject_set.all()
+        assignments = all_subjects[0].assignment_set.all()
+        default_assignment = assignments[0]
+        filename = default_assignment.filename
+        directory = base_directory + 'codes/' + stream + '/' + year + '/' + all_subjects[0].subject + '/' + filename
+        fp = open(directory, 'r')
+        code = fp.read().split('*/')  # To not display question while viewing code
+        fp.close()
+        test_code = highlight(code[1], CppLexer(), HtmlFormatter())
+        # print(test_code)
+        all_stream = StreamData.objects.values_list('stream', flat=True).distinct()
+        all_year = StreamData.objects.filter(stream=stream).values_list('year', flat=True).distinct()
+        print(all_stream)
+        print(all_year)
+        return render(request, 'practicals/subject.html', {
+            'all_subjects': all_subjects,
+            'assignment': default_assignment,
+            'test_code': test_code,
+            'all_stream': all_stream,
+            'all_year': all_year,
+            'selected_stream': stream,
+            'selected_year': year
+        })
+    elif request.is_ajax():
+        print("in ajax")
+        data = (request.GET.get('select_assignment')).split(' ')
+        print(data)
+
+        assignment_id = data[1]
+        base_directory = ''
+        if getpass.getuser() == 'rsniper':
+            base_directory = '/home/rsniper/SPPU_Student/'
+        assignment = Assignment.objects.get(id=assignment_id)
+        subject_obj = assignment.subject_obj
+        stream_obj = subject_obj.stream_obj
+        stream = stream_obj.stream
+        year = stream_obj.year
+        filename = assignment.filename
+        directory = base_directory + 'codes/' + stream + '/' + year + '/' + subject_obj.subject + '/' + filename
+        fp = open(directory, 'r')
+        code = fp.read().split('*/')  # To not display question while viewing code
+        fp.close()
+        test_code = highlight(code[1], CppLexer(), HtmlFormatter())
+        # print(test_code)
+        print(data)
+        return render(request, 'practicals/code.html', {
+            'assignment': assignment,
+            'test_code': test_code,
+        })
+    else:
+        return HttpResponse("Some Error Occured. ")
 
 
 #
@@ -162,14 +140,15 @@ def refresh(request):
             added_subjects.append(subject)
 
         if Assignment.objects.filter(subject_obj=AllSubject.objects.get(subject=subject,
-                                                                 stream_obj=StreamData.objects.get(stream=stream,
-                                                                                                   year=year)),
-                                  filename=filename, title=title, problem_statement=problem ):
+                                                                        stream_obj=StreamData.objects.get(stream=stream,
+                                                                                                          year=year)),
+                                     filename=filename, title=title, problem_statement=problem):
             print("Exists")
         else:
             new_assignment = Assignment(subject_obj=AllSubject.objects.get(subject=subject,
-                                                                       stream_obj=StreamData.objects.get(stream=stream,
-                                                                                                         year=year)),
+                                                                           stream_obj=StreamData.objects.get(
+                                                                               stream=stream,
+                                                                               year=year)),
                                         filename=filename, title=title, problem_statement=problem)
             new_assignment.save()
             added_programs.append(new_assignment.title)

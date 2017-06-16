@@ -1,34 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>Simple Pre Code Dark Background</title>
-    {% load static %}
-
-    <!link rel="stylesheet" href="{% static 'practicals/styles/googlecode.css' %}">
-    <!link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/googlecode.min.css">
-    <link rel="stylesheet" href="{% static 'practicals/code_style.css' %}">
-</head>
-
-<body>
-<div class="con">
-    <div class='wrapper'>
-        <pre id="question">{{ assignment.problem_statement }}</pre>
-    </div>
-    <div class='wrapper'>
-
-
-          <pre style="background-color: #eeeeee;">{{ test_code|safe }}
-          </pre>
-    </div>
+<div class="col-md-12">
+    <p class="visible-xs">
+        <button type="button" class="btn btn-danger btn-sm" data-toggle="offcanvas"><i
+                class="glyphicon glyphicon-chevron-left"></i></button>
+    </p>
 </div>
-</body>
-<!script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"><!/script>
-<!script src="{% static 'practicals/highlight.pack.js' %}"><!/script>
-<!script src="{% static 'practicals/highlightjs-line-numbers.min.js' %}"><!/script>
-<!script>
-
-<!/script>
-
+<div class='wrapper'>
+    <pre id="question">{{ assignment.problem_statement }}</pre>
+</div>
+<div class='wrapper'>
+          <pre style="background-color: #eeeeee;">
+              {{ test_code|safe }}
+          </pre>
+</div>
 </html>
 

@@ -15,7 +15,7 @@
     <section class="title">
         <h1>Home</h1>
     </section>
-    <form action="{% url 'selection:default_subject' %}" method="get">
+    <form action="{% url 'selection:view_code' %}" method="get">
         <section class="wrap">
             <div id="container">
                 <p id="head">Select Your Stream
@@ -24,7 +24,6 @@
                         <option value="hide" disabled selected>Stream</option>
                         {% for streams in all_streams %}
                             <option>{{ streams }}</option>
-
                         {% endfor %}
                     </select><br/>
                     <select id="year" name="year" onChange=displayGoButton(this)>
