@@ -226,6 +226,11 @@
                         // so you don't nest a new div#refresh-this-div on every call
                         //var html = $(data).filter('#refresh-this-div').html();
                         $('#main').html(data);
+                        $(document).ready(function () {
+                            $('[data-toggle=offcanvas]').click(function () {
+                                $('.row-offcanvas').toggleClass('active');
+                            });
+                        });
                     }
                 });
             });
