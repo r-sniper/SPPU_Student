@@ -1,6 +1,8 @@
 import getpass  # To get username of the system
 import os  # To update database for recursion visir every file in directory
 from wsgiref.util import FileWrapper
+
+import time
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 
@@ -8,6 +10,10 @@ from .models import StreamData, AllSubject, Assignment
 from pygments import highlight
 from pygments.lexers.c_cpp import CppLexer
 from pygments.formatters.html import HtmlFormatter
+
+
+def test(request):
+    return render(request, 'practicals/load.html')
 
 
 # Homepage
@@ -19,7 +25,7 @@ def home(request):
     })
 
 
-def test(request):
+def subject(request):
     if request.GET.get("Go") or request.GET.get("change"):
         stream = request.GET.get('stream')
         year = request.GET.get('year')
@@ -37,10 +43,12 @@ def test(request):
         fp.close()
         test_code = highlight(code[1], CppLexer(), HtmlFormatter())
         # print(test_code)
+        line_count = test_code.count('\n')
+        print(line_count)
         all_stream = StreamData.objects.values_list('stream', flat=True).distinct()
         all_year = StreamData.objects.filter(stream=stream).values_list('year', flat=True).distinct()
-        print(all_stream)
-        print(all_year)
+        # print(all_stream)
+        # print(all_year)
         return render(request, 'practicals/subject.html', {
             'all_subjects': all_subjects,
             'assignment': default_assignment,
@@ -48,12 +56,13 @@ def test(request):
             'all_stream': all_stream,
             'all_year': all_year,
             'selected_stream': stream,
-            'selected_year': year
+            'selected_year': year,
+            'line_count': range(line_count),
         })
     elif request.is_ajax():
         print("in ajax")
         data = (request.GET.get('select_assignment')).split(' ')
-        print(data)
+        # print(data)
 
         assignment_id = data[1]
         base_directory = ''
@@ -70,11 +79,15 @@ def test(request):
         code = fp.read().split('*/')  # To not display question while viewing code
         fp.close()
         test_code = highlight(code[1], CppLexer(), HtmlFormatter())
+        line_count = test_code.count('\n')
+        print(line_count)
         # print(test_code)
-        print(data)
+        # print(data)
+        # time.sleep(2)
         return render(request, 'practicals/code.html', {
             'assignment': assignment,
             'test_code': test_code,
+            'line_count': range(line_count),
         })
     else:
         return HttpResponse("Some Error Occured. ")

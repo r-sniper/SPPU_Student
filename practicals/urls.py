@@ -15,7 +15,8 @@ urlpatterns = [
     url(r'^$', views.home, name="home_page"),
     # /refresh - Update Database with new codes
     url(r'^refresh/$', views.refresh, name="refresh"),
-    #url /view_code
-    url(r'^subject/$',views.test,name='view_code')
-
+    # url /view_code
+    url(r'^subject/$', views.subject, name='view_code'),
+    # /test - We use this to test any template
+    url(r'^test/$', views.test, name='test')
 ]
