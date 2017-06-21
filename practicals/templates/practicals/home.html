@@ -42,7 +42,7 @@
             clear: both;
         }
 
-        body,html {
+        body, html {
             font-size: 20px;
             font-family: 'Roboto Condensed', Roboto, sans-serif;
             font-weight: 300;
@@ -128,7 +128,7 @@
     </style>
 </head>
 
-<body>
+<body onload="initialize()">
 <div class="hero">
     <div class="top">
         <!--Navbar top-->
@@ -211,6 +211,18 @@
     function displayGoButton(id) {
         //id.style.color = "#111111";
         document.getElementById("Go").style.display = "inline-block";
+    }
+    function initialize() {
+
+        var e = document.getElementById("stream");
+        //alert("kjm");
+        var selectedStream = e.options[e.selectedIndex].text;
+        //alert(e.value.indexOf("Select"));
+        if (e.value.indexOf("Select") == -1) {
+            changeColor(e);
+            //alert("Yup");
+        }
+
     }
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
