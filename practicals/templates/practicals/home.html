@@ -3,40 +3,160 @@
 <head>
     <title>Code Solve</title>
     {% load static %}
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static 'practicals/home_style.css' %}">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SPPU</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <style>
+        .content {
+            /*border: 1px dotted black;*/
+            height: 100%;
+            padding: 5px;
+            transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .row {
+            padding: 1.2%;
+        }
+
+        .top {
+            height: 100vh;
+            color: white;
+            background: bottom -20px left -10px/280% no-repeat url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="148.32mm" width="560.24mm" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1985.1198 525.53019"><defs><linearGradient id="a"><stop stop-color="%23fff" offset="0"/><stop stop-color="%23fff" stop-opacity="0" offset="1"/></linearGradient><linearGradient id="b" y2="1252.4" xlink:href="%23a" gradientUnits="userSpaceOnUse" x2="937.3" gradientTransform="translate(7.495 -806.68)" y1="832.54" x1="937.3"/><linearGradient id="c" y2="860.65" xlink:href="%23a" gradientUnits="userSpaceOnUse" x2="288.08" gradientTransform="translate(718.15 -332.46)" y1="460.14" x1="248.67"/></defs><path d="M1.495 523.68l6-78 140-76 174 36 244-140 198 102 238-108 274 14 249.44-96.992 218.56 72.992 240-246v520" fill-rule="evenodd" stroke="%23fff" stroke-width="3" fill="url(%23b)"/><g fill="%23fff"><circle cx="147.5" cy="369.68" r="12"/><circle cy="405.68" cx="321.5" r="12"/><circle cx="565.5" cy="265.68" r="12"/><circle cy="367.68" cx="763.5" r="12"/><circle cx="1001.5" cy="259.68" r="12"/><circle cy="273.68" cx="1275.5" r="12"/><circle cx="1524.9" cy="176.69" r="12"/><circle cy="249.68" cx="1743.5" r="12"/></g><path d="M1275.5 273.68l-8.485 250m716.49-176.99l-240-97.005-476.49 274-503.51-156-348 156-94-118" stroke="url(%23c)" stroke-width="3" fill="none"/></svg>'), linear-gradient(to bottom, #45b0a0, #7bdacc);
+            background-size: 110%;
+        }
+
+        .hero {
+            box-sizing: border-box;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .hero:after {
+            content: " ";
+            display: block;
+            clear: both;
+        }
+
+        body,
+        html {
+            font-size: 20px;
+            font-family: 'Roboto Condensed', Roboto, sans-serif;
+            font-weight: 300;
+            line-height: 1.3;
+        }
+
+        .navbar-brand {
+            color: white;
+            font-size: 1.6em;
+        }
+
+        .items {
+            color: white;
+            font-size: .9em;
+        }
+
+        .icon-bar {
+            background: #fff;
+        }
+
+        .quote {
+            font-weight: bold;
+        }
+
+        .quote-head {
+            text-decoration: underline;
+            display: block;
+            font-size: 2em;
+            margin: 20px;
+        }
+
+        .navbar {
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+        }
+
+        select {
+            padding: 8px;
+            background: rgba(41, 106, 121, .1);
+            border: 2px dotted #45b0a0;
+            display: inline-block;
+            color: white;
+            width: 80%;
+            margin: 5% 0;
+        }
+
+        option {
+            background: rgba(0, 0, 0, 0);
+            color: black;
+        }
+
+
+    </style>
 </head>
+
 <body>
+<div class="hero">
+    <div class="top">
+        <!--Navbar top-->
 
-<header>
-
-</header>
-<main>
-    <section class="title">
-        <h1>Home</h1>
-    </section>
-    <form action="{% url 'selection:view_code' %}" method="get">
-        <section class="wrap">
-            <div id="container">
-                <p id="head">Select Your Stream
-                <p>
-                    <select id="stream" name="stream" onchange=changeColor(this)>
-                        <option value="hide" disabled selected>Stream</option>
-                        {% for streams in all_streams %}
-                            <option>{{ streams }}</option>
-                        {% endfor %}
-                    </select><br/>
-                    <select id="year" name="year" onChange=displayGoButton(this)>
-                        <option value="hide" disabled selected>Select Year</option>
-                    </select><br/>
-                    <button id="Go" value="Go" name="Go">Go</button>
+        <!--Navbar Begins-->
+        <nav class="navbar">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">SPPU</a>
             </div>
-        </section>
-    </form>
-</main>
-<footer>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="items" href="">Support us</a></li>
+                    <li><a class="items" href="">About us</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </nav>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-lg-6">
 
-</footer>
+                    <div class="content">
+                        <span class="quote-head">Quote of the day</span>
+                        <span class="quote">“ If debugging is the process of removing software bugs, then programming must
+                        be the process of putting them in. ”</span>
+                    </div>
+                </div>
+                <form action="{% url 'selection:view_code' %}" method="get">
+                    <div class="col-lg-6">
+                        <div class="content">
+                            <select id="stream" name="stream" onchange=changeColor(this)>
+                                <option disabled selected>Select Stream</option>
+                                {% for streams in all_streams %}
+                                    <option>{{ streams }}</option>
+                                {% endfor %}
+                            </select>
+                            <select id="year" name="year" onChange=displayGoButton(this)>
+                                <option disabled selected>Select Year</option>
+                            </select>
+                        <br>
+                            <button id="Go" value="Go" name="Go">Go</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
 <script>
     function changeColor(id) {
         var stream = id.value;
@@ -61,14 +181,18 @@
                 yearId.remove
             }
         }
-        id.style.color = "#111111";
-        document.getElementById("year").style.display = "block";
+        //id.style.color = "#111111";
+        //document.getElementById("year").style.display = "block";
 
     }
     function displayGoButton(id) {
-        id.style.color = "#111111";
+        //id.style.color = "#111111";
         document.getElementById("Go").style.display = "inline-block";
     }
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
 </body>
 </html> 
