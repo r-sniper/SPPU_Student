@@ -12,11 +12,10 @@
 
     <style>
         .content {
-            /*border: 1px dotted black;*/
             height: 100%;
             padding: 5px;
             transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
-            margin-top: 60px;
+            margin-top: 20%;
             text-align: center;
         }
 
@@ -35,7 +34,6 @@
             box-sizing: border-box;
             height: 100%;
             width: 100%;
-            overflow: hidden;
         }
 
         .hero:after {
@@ -44,8 +42,7 @@
             clear: both;
         }
 
-        body,
-        html {
+        body,html {
             font-size: 20px;
             font-family: 'Roboto Condensed', Roboto, sans-serif;
             font-weight: 300;
@@ -54,7 +51,7 @@
 
         .navbar-brand {
             color: white;
-            font-size: 1.6em;
+            font-size: 1.2em;
         }
 
         .items {
@@ -66,18 +63,16 @@
             background: #fff;
         }
 
-        .quote {
-            font-weight: bold;
-        }
-
         .quote-head {
             text-decoration: underline;
             display: block;
             font-size: 2em;
             margin: 20px;
+            font-weight: bold;
         }
 
         .navbar {
+            background: #47B1A1;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
             transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
         }
@@ -93,10 +88,42 @@
         }
 
         option {
-            background: rgba(0, 0, 0, 0);
-            color: black;
+            background: #47B1A1;
+            color: white;
         }
 
+        .nav-item {
+            background: #47B1A1;
+            color: white;
+        }
+
+        .navbar-right {
+            margin-right: 5px;
+        }
+
+        .go {
+            background: #45B0A0;
+            border: none;
+            border-radius: 50px;
+            color: #ffffff;
+            font-size: 20px;
+            padding: 5px;
+            text-decoration: none;
+        }
+
+        @media (max-width: 1198px) {
+            .content {
+                margin-top: 30px
+            }
+
+            .quote-head {
+                font-size: 1.2em;
+            }
+
+            select {
+                width: 100%;
+            }
+        }
 
     </style>
 </head>
@@ -105,26 +132,22 @@
 <div class="hero">
     <div class="top">
         <!--Navbar top-->
-
-        <!--Navbar Begins-->
-        <nav class="navbar">
+        <div class="navbar navbar-fixed-top">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                        aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">SPPU</a>
+                <span class="navbar-brand" href="#">SPPU</span>
             </div>
-            <div id="navbar" class="navbar-collapse collapse">
+            <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a class="items" href="">Support us</a></li>
                     <li><a class="items" href="">About us</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
-        </nav>
+        </div><!--/.navbar -->
         <div class="col-md-12">
             <div class="row">
                 <div class="col-lg-6">
@@ -132,7 +155,7 @@
                     <div class="content">
                         <span class="quote-head">Quote of the day</span>
                         <span class="quote">“ If debugging is the process of removing software bugs, then programming must
-                        be the process of putting them in. ”</span>
+                        be the process of putting them in.”</span>
                     </div>
                 </div>
                 <form action="{% url 'selection:view_code' %}" method="get">
@@ -147,8 +170,8 @@
                             <select id="year" name="year" onChange=displayGoButton(this)>
                                 <option disabled selected>Select Year</option>
                             </select>
-                        <br>
-                            <button id="Go" value="Go" name="Go">Go</button>
+                            <br>
+                            <button class="go" id="Go" value="Go" name="Go">Go</button>
                         </div>
                     </div>
                 </form>
