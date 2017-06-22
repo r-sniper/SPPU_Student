@@ -161,7 +161,7 @@
                 <form action="{% url 'selection:view_code' %}" method="get">
                     <div class="col-lg-6">
                         <div class="content">
-                            <select id="stream" name="stream" onchange=changeColor(this)>
+                            <select id="stream" name="stream" onchange=loadYear(this.value)>
                                 <option disabled selected>Select Stream</option>
                                 {% for streams in all_streams %}
                                     <option>{{ streams }}</option>
@@ -180,6 +180,41 @@
         </div>
     </div>
 </div>
+<script>
+    function loadYear(selectedStream) {
+
+        //alert("onclick");
+        //alert(selectedStream);
+        $.ajax({
+            url: '/subject/',
+            data: {
+                'selected_stream': selectedStream
+            },
+            success: function (data) {
+                // grab the inner html of the returned div
+                // so you don't nest a new div#refresh-this-div on every call
+                //var html = $(data).filter('#refresh-this-div').html();
+                //alert(data);
+                var yearId = document.getElementById("year");
+                for (i = yearId.options.length - 1; i >= 0; i--) {
+                    yearId.remove(i);
+                }
+                for (var i = 0; i < data.length; i += 2) {
+                    var option = document.createElement('option');
+                    option.text = data[i] + data[i + 1];
+                    yearId.add(option);
+                }
+                $(document).ready(function () {
+                    $('[data-toggle=offcanvas]').click(function () {
+                        $('.row-offcanvas').toggleClass('active');
+                    });
+                });
+            }
+        });
+
+    };
+
+</script>
 <script>
     function changeColor(id) {
         var stream = id.value;
@@ -212,6 +247,7 @@
         //id.style.color = "#111111";
         document.getElementById("Go").style.display = "inline-block";
     }
+
     function initialize() {
 
         var e = document.getElementById("stream");
