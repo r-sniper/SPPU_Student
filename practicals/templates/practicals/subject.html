@@ -236,8 +236,8 @@
     <script>
         function loadYear(selectedStream) {
 
-            alert("onclick");
-            alert(selectedStream);
+            //alert("onclick");
+            //alert(selectedStream);
             $.ajax({
                 url: '/subject/',
                 data: {
@@ -247,7 +247,7 @@
                     // grab the inner html of the returned div
                     // so you don't nest a new div#refresh-this-div on every call
                     //var html = $(data).filter('#refresh-this-div').html();
-                    alert(data);
+                    //alert(data);
                     var yearId = document.getElementById("year");
                     for (i = yearId.options.length - 1; i >= 0; i--) {
                         yearId.remove(i);
