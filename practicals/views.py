@@ -1,4 +1,5 @@
 import getpass  # To get username of the system
+import json
 import os  # To update database for recursion visir every file in directory
 from wsgiref.util import FileWrapper
 
@@ -61,34 +62,40 @@ def subject(request):
         })
     elif request.is_ajax():
         print("in ajax")
-        data = (request.GET.get('select_assignment')).split(' ')
-        # print(data)
+        if request.GET.get('select_assignment'):
+            data = (request.GET.get('select_assignment')).split(' ')
+            # print(data)
 
-        assignment_id = data[1]
-        base_directory = ''
-        if getpass.getuser() == 'rsniper':
-            base_directory = '/home/rsniper/SPPU_Student/'
-        assignment = Assignment.objects.get(id=assignment_id)
-        subject_obj = assignment.subject_obj
-        stream_obj = subject_obj.stream_obj
-        stream = stream_obj.stream
-        year = stream_obj.year
-        filename = assignment.filename
-        directory = base_directory + 'codes/' + stream + '/' + year + '/' + subject_obj.subject + '/' + filename
-        fp = open(directory, 'r')
-        code = fp.read().split('*/')  # To not display question while viewing code
-        fp.close()
-        test_code = highlight(code[1], CppLexer(), HtmlFormatter())
-        line_count = test_code.count('\n')
-        print(line_count)
-        # print(test_code)
-        # print(data)
-        # time.sleep(2)
-        return render(request, 'practicals/code.html', {
-            'assignment': assignment,
-            'test_code': test_code,
-            'line_count': range(line_count),
-        })
+            assignment_id = data[1]
+            base_directory = ''
+            if getpass.getuser() == 'rsniper':
+                base_directory = '/home/rsniper/SPPU_Student/'
+            assignment = Assignment.objects.get(id=assignment_id)
+            subject_obj = assignment.subject_obj
+            stream_obj = subject_obj.stream_obj
+            stream = stream_obj.stream
+            year = stream_obj.year
+            filename = assignment.filename
+            directory = base_directory + 'codes/' + stream + '/' + year + '/' + subject_obj.subject + '/' + filename
+            fp = open(directory, 'r')
+            code = fp.read().split('*/')  # To not display question while viewing code
+            fp.close()
+            test_code = highlight(code[1], CppLexer(), HtmlFormatter())
+            line_count = test_code.count('\n')
+            print(line_count)
+            # print(test_code)
+            # print(data)
+            # time.sleep(2)
+            return render(request, 'practicals/code.html', {
+                'assignment': assignment,
+                'test_code': test_code,
+                'line_count': range(line_count),
+            })
+        else:
+            selected_stream = request.GET.get('selected_stream')
+            all_year = list(StreamData.objects.filter(stream=selected_stream).values_list('year', flat=True))
+            return HttpResponse(all_year)
+
     else:
         return HttpResponse("Some Error Occured. ")
 

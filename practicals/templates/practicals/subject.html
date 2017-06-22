@@ -98,7 +98,8 @@
         }
 
         .go {
-            margin-right: 5px;border: none;
+            margin-right: 5px;
+            border: none;
             color: #000;
             padding: 5px;
             border-radius: 2px;
@@ -113,14 +114,17 @@
             background: #47B1A1;
             color: white;
         }
-          .navbar-brand {
+
+        .navbar-brand {
             color: white;
             font-size: 1.2em;
         }
-        .wrapper{
+
+        .wrapper {
             margin: 10px auto;
         }
-        .btn-sm{
+
+        .btn-sm {
             margin-top: 5px;
         }
     </style>
@@ -141,7 +145,7 @@
             <li><a href="#" class="nav-item">About us</a></li>
         </ul>
         <form class="navbar-form navbar-right " role="search" method="get" action="{% url 'selection:view_code' %}">
-            <select id="stream" name="stream">
+            <select id="stream" name="stream" onchange="loadYear(this.value)">
                 {% for stream in all_stream %}
                     {% ifequal stream selected_stream %}
                         <option selected="selected">{{ stream }}</option>
@@ -229,7 +233,41 @@
             });
         });
     </script>
+    <script>
+        function loadYear(selectedStream) {
 
+            alert("onclick");
+            alert(selectedStream);
+            $.ajax({
+                url: '/subject/',
+                data: {
+                    'selected_stream': selectedStream
+                },
+                success: function (data) {
+                    // grab the inner html of the returned div
+                    // so you don't nest a new div#refresh-this-div on every call
+                    //var html = $(data).filter('#refresh-this-div').html();
+                    alert(data);
+                    var yearId = document.getElementById("year");
+                    for (i = yearId.options.length - 1; i >= 0; i--) {
+                        yearId.remove(i);
+                    }
+                    for (var i = 0; i < data.length; i+=2) {
+                        var option = document.createElement('option');
+                        option.text = data[i] + data[i+1];
+                        yearId.add(option);
+                    }
+                    $(document).ready(function () {
+                        $('[data-toggle=offcanvas]').click(function () {
+                            $('.row-offcanvas').toggleClass('active');
+                        });
+                    });
+                }
+            });
+
+        };
+
+    </script>
     <script>
         $(function () {
             $('input').on('click', function () {
