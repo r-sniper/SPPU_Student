@@ -2,12 +2,11 @@ import getpass  # To get username of the system
 import json
 import os  # To update database for recursion visir every file in directory
 from wsgiref.util import FileWrapper
-
 import time
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
-
-from .models import StreamData, AllSubject, Assignment
+from random import randint
+from .models import StreamData, AllSubject, Assignment, Quotes
 from pygments import highlight
 from pygments.lexers.c_cpp import CppLexer
 from pygments.formatters.html import HtmlFormatter
@@ -21,8 +20,14 @@ def test(request):
 def home(request):
     # .distinct()to only get single copies of all streams
     all_streams = StreamData.objects.values_list('stream', flat=True).distinct()
+    all_quotes = list(Quotes.objects.all())
+    print(all_quotes)
+    number_of_quotes = len(all_quotes)
+    random_number = randint(0, number_of_quotes - 1)
+    generated_quote = all_quotes[random_number].quote
     return render(request, 'practicals/home.html', {
         'all_streams': all_streams,
+        'generated_quote': generated_quote,
     })
 
 
@@ -178,3 +183,17 @@ def refresh(request):
                       'program_count': len(added_programs),
                       'streams': stream, 'subjects': added_subjects, 'programs': added_programs
                   })
+
+
+def add_quote(request):
+    fp = open('codes/quotes.txt')
+    quotes_objects = []
+    added_quotes = []
+    quotes = fp.read().split('.')
+    for quote in quotes:
+        if not Quotes.objects.filter(quote=quote):
+            new_quote = Quotes(quote=quote)
+            added_quotes.append(quote)
+            quotes_objects.append(new_quote)
+    Quotes.objects.bulk_create(quotes_objects)
+    return HttpResponse(added_quotes)

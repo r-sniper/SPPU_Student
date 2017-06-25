@@ -17,6 +17,9 @@ urlpatterns = [
     url(r'^refresh/$', views.refresh, name="refresh"),
     # url /view_code
     url(r'^subject/$', views.subject, name='view_code'),
+    #
+    url(r'^add_quotes/$',views.add_quote,name='add_quote'),
     # /test - We use this to test any template
     url(r'^test/$', views.test, name='test')
+
 ]

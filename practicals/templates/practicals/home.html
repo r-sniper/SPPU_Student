@@ -143,8 +143,8 @@
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a class="items" href="">Support us</a></li>
-                    <li><a class="items" href="">About us</a></li>
+                    <li><a class="items" href="#">Support us</a></li>
+                    <li><a class="items" href="#">About us</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div><!--/.navbar -->
@@ -154,8 +154,7 @@
 
                     <div class="content">
                         <span class="quote-head">Quote of the day</span>
-                        <span class="quote">“ If debugging is the process of removing software bugs, then programming must
-                        be the process of putting them in.”</span>
+                        <span class="quote">“ {{ generated_quote }}.”</span>
                     </div>
                 </div>
                 <form action="{% url 'selection:view_code' %}" method="get">
