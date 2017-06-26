@@ -1,11 +1,13 @@
-If debugging is the process of removing software bugs, then programming must be the process of putting them in.
-Declare variables not war.
-It's hard enough to find an error in your code when you're looking for it; it's even harder when you've assumed your code is error-free.
-Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.
-Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.
-Any fool can write code that a computer can understand,Good programmers write code that humans can understand.
-Any code of your own that you haven't looked at for six or more months might as well have been written by someone else.
-Talk is cheap, Show me the code.
-A computer program does what you tell it to do, not what you want it to do.
-Keyboard not found!Press any key to continue.
-Not all roots are buried down in the ground, some are at the top of a tree.
+If debugging is the process of removing software bugs, then programming must be the process of putting them in.~Edsger Dijkstra^
+Declare variables, not Wars. Execute Programs, not people.^
+It's hard enough to find an error in your code when you're looking for it; it's even harder when you've assumed your code is error-free.~Steve McConnell^
+Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.~Brian Kernighan^
+Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.~John Woods^
+Any fool can write code that a computer can understand,Good programmers write code that humans can understand.~Martin Fowler^
+Any code of your own that you haven't looked at for six or more months might as well have been written by someone else.~Eagleson's law^
+Talk is cheap, Show me the code.~Linus Torvalds^
+A computer program does what you tell it to do, not what you want it to do.~Arthur Bloch^
+Keyboard not found!Press any key to continue.^
+Not all roots are buried down in the ground, some are at the top of a tree.^
+Programming today is a race between software engineers striving to build bigger and better idiot-proof programs, and the Universe trying to produce bigger and better idiots. So far, the Universe is winning.~Rick Cook^
+There are 10 kinds of people in the world — those who understand binary and those who don't.

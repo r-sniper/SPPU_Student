@@ -1,5 +1,4 @@
 import getpass  # To get username of the system
-import json
 import os  # To update database for recursion visir every file in directory
 from wsgiref.util import FileWrapper
 import time
@@ -25,9 +24,11 @@ def home(request):
     number_of_quotes = len(all_quotes)
     random_number = randint(0, number_of_quotes - 1)
     generated_quote = all_quotes[random_number].quote
+    author = all_quotes[random_number].author
     return render(request, 'practicals/home.html', {
         'all_streams': all_streams,
         'generated_quote': generated_quote,
+        'author':author
     })
 
 
@@ -88,8 +89,6 @@ def subject(request):
             test_code = highlight(code[1], CppLexer(), HtmlFormatter())
             line_count = test_code.count('\n')
             print(line_count)
-            # print(test_code)
-            # print(data)
             # time.sleep(2)
             return render(request, 'practicals/code.html', {
                 'assignment': assignment,
@@ -109,6 +108,7 @@ def subject(request):
 #
 # # This adds all the new codes to the database
 # # Warning do not use on hosted server- only on local server.
+# Please do not use this view unless taken explicit permission
 def refresh(request):
     # Notice here 'rsniper' is just the username of the currently hosted site on pythonanywhere.
     # It is subjected to change
@@ -174,14 +174,18 @@ def refresh(request):
                                                                            stream_obj=StreamData.objects.get(
                                                                                stream=stream,
                                                                                year=year)),
-                                        filename=filename, title=title, problem_statement=problem)
+                                        filename=filename, title=title,
+                                        problem_statement=problem)
             new_assignment.save()
             added_programs.append(new_assignment.title)
     return render(request, 'practicals/new_addition.html',
                   {
-                      'stream_count': len(added_streams), 'subject_count': len(added_subjects),
+                      'stream_count': len(added_streams),
+                      'subject_count': len(added_subjects),
                       'program_count': len(added_programs),
-                      'streams': stream, 'subjects': added_subjects, 'programs': added_programs
+                      'streams': stream,
+                      'subjects': added_subjects,
+                      'programs': added_programs
                   })
 
 
@@ -189,11 +193,19 @@ def add_quote(request):
     fp = open('codes/quotes.txt')
     quotes_objects = []
     added_quotes = []
-    quotes = fp.read().split('.')
-    for quote in quotes:
-        if not Quotes.objects.filter(quote=quote):
-            new_quote = Quotes(quote=quote)
-            added_quotes.append(quote)
+    quotes_with_author = fp.read().split('^')
+
+    for full in quotes_with_author:
+        quote_with_author = full.split('~')
+        quote = quote_with_author[0]
+        author = ''
+        if len(quote_with_author)<=1:
+            author = 'Anonymous'
+        else:
+            author = quote_with_author[1]
+        if not Quotes.objects.filter(quote=quote,author=author):
+            new_quote = Quotes(quote=quote,author=author)
+            added_quotes.append(quote + '<br')
             quotes_objects.append(new_quote)
     Quotes.objects.bulk_create(quotes_objects)
     return HttpResponse(added_quotes)

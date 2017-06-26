@@ -44,5 +44,6 @@ class Assignment(models.Model):
 
 class Quotes(models.Model):
     quote = models.CharField(max_length=2000)
+    author = models.CharField(max_length=100,default="Anonymous")
     def __str__(self):
         return (str(self.id) + " " + self.quote)
